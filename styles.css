@@ -358,6 +358,10 @@ pre {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 5.5rem;
 }
 
 .metric-row strong,
