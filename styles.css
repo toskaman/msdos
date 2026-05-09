@@ -570,9 +570,7 @@ pre {
 }
 
 .project-visual {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, var(--surface)), var(--surface-strong)),
-    var(--surface-strong);
+  background: var(--surface-strong);
   border-bottom: 1px solid var(--line);
   display: grid;
   min-height: 13rem;
@@ -581,8 +579,10 @@ pre {
   position: relative;
 }
 
-.project-visual::before {
+.project-visual::before,
+.project-visual::after {
   content: none !important;
+  display: none !important;
 }
 
 .project-visual span {
