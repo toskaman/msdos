@@ -526,6 +526,11 @@ pre {
   font-weight: 800;
   min-height: 2.45rem;
   padding: 0 0.9rem;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease;
+}
+
+.filter-button:hover {
+  transform: scale(1.1);
 }
 
 .filter-button.active,
@@ -577,14 +582,7 @@ pre {
 }
 
 .project-visual::before {
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--line) 68%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--line) 68%, transparent) 1px, transparent 1px);
-  background-size: 22px 22px;
-  content: "";
-  inset: 0;
-  opacity: 0.5;
-  position: absolute;
+  content: none !important;
 }
 
 .project-visual span {
