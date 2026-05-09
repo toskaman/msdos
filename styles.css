@@ -572,7 +572,9 @@ pre {
 .project-visual {
   background: var(--surface-strong);
   border-bottom: 1px solid var(--line);
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 13rem;
   overflow: hidden;
   padding: 1.1rem;
@@ -583,14 +585,16 @@ pre {
 .project-visual::after {
   content: none !important;
   display: none !important;
+  background: none !important;
+  background-image: none !important;
 }
 
 .project-visual span {
   position: relative;
+  display: none; /* Cache les anciens spans par défaut */
 }
 
 .visual-manager {
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 0.7rem;
 }
 
@@ -651,7 +655,6 @@ pre {
 }
 
 .visual-security {
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 0.7rem;
 }
 
@@ -721,7 +724,6 @@ pre {
 .visual-parallax {
   align-items: end;
   gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .visual-parallax span {
@@ -743,7 +745,6 @@ pre {
 }
 
 .visual-roblox {
-  grid-template-columns: repeat(4, 1fr);
   place-items: center;
 }
 
@@ -762,7 +763,6 @@ pre {
 
 .visual-servers {
   gap: 0.75rem;
-  grid-template-columns: repeat(4, 1fr);
   place-items: end center;
 }
 
@@ -795,7 +795,15 @@ pre {
   height: 8rem;
 }
 
+.visual-manager span,
+.visual-parallax span,
+.visual-subtitles span {
+  display: inline-flex !important;
+}
+
 .visual-subtitles {
+  display: flex;
+  flex-direction: column;
   align-content: center;
   gap: 0.8rem;
 }
@@ -932,7 +940,6 @@ pre {
 .visual-ai {
   align-content: center;
   gap: 0.75rem;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .visual-ai span {
@@ -1221,6 +1228,7 @@ pre {
 
 .stats-item img {
   max-width: 100%;
+  display: block;
 }
 
 .stats-item.countries a {
