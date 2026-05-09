@@ -524,4 +524,6 @@ langToggle?.addEventListener("click", () => {
 });
 
 // Initialize language
-updateLanguage(currentLang);
+document.addEventListener("DOMContentLoaded", () => {
+  updateLanguage(currentLang);
+});
