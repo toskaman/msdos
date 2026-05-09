@@ -4,6 +4,8 @@ Site portfolio statique pour presenter des projets, competences et liens de cont
 
 URL cible : `https://toskaman.github.io/`
 
+Version actuelle : mai 2026, mode nuit par defaut.
+
 ## Modifier le contenu
 
 - `index.html` : textes, projets, liens GitHub/Discord/email.

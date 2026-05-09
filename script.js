@@ -1,15 +1,20 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const storedTheme = localStorage.getItem("portfolio-theme");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
 
-if (storedTheme) {
-  root.dataset.theme = storedTheme;
+function syncThemeMeta() {
+  themeMeta?.setAttribute("content", root.dataset.theme === "light" ? "#f7f8fb" : "#111315");
 }
+
+root.dataset.theme = storedTheme || "dark";
+syncThemeMeta();
 
 themeToggle?.addEventListener("click", () => {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = nextTheme;
   localStorage.setItem("portfolio-theme", nextTheme);
+  syncThemeMeta();
 });
 
 const searchInput = document.querySelector("[data-project-search]");
