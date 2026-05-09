@@ -54,12 +54,20 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -5%;
   pointer-events: none;
   background:
     linear-gradient(90deg, rgba(55, 198, 192, 0.1), transparent 36%),
     radial-gradient(circle at 85% 8%, rgba(255, 117, 117, 0.1), transparent 24rem);
   z-index: -2;
+  filter: blur(40px);
+  animation: bgMovement 25s infinite alternate ease-in-out;
+}
+
+@keyframes bgMovement {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2%, 1%) scale(1.02); }
+  100% { transform: translate(-1%, 2%) scale(1.05); }
 }
 
 a {
