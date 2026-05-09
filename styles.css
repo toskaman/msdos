@@ -227,23 +227,6 @@ h1 {
   max-width: 42rem;
 }
 
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 1.2rem;
-}
-
-.hero-badges span {
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 800;
-  padding: 0.42rem 0.68rem;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -379,6 +362,7 @@ pre {
 }
 
 .intro-grid,
+.experience-strip,
 .projects-grid,
 .skills-layout,
 .contact-section {
@@ -424,6 +408,40 @@ pre {
 .focus-item p {
   color: var(--muted);
   line-height: 1.6;
+  margin: 0;
+}
+
+.experience-strip {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.experience-strip article {
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.experience-strip span {
+  color: var(--accent-strong);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 900;
+  margin-bottom: 0.85rem;
+}
+
+.experience-strip h3 {
+  font-size: 1rem;
+  line-height: 1.22;
+  margin: 0 0 0.55rem;
+}
+
+.experience-strip p {
+  color: var(--muted);
+  line-height: 1.58;
   margin: 0;
 }
 
@@ -637,6 +655,38 @@ pre {
   width: 8.5rem;
 }
 
+.visual-anticheat {
+  align-content: center;
+  gap: 0.7rem;
+}
+
+.visual-anticheat span {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: block;
+  height: 2.9rem;
+  overflow: hidden;
+}
+
+.visual-anticheat span::after {
+  background: var(--coral);
+  content: "";
+  display: block;
+  height: 100%;
+  width: 32%;
+}
+
+.visual-anticheat span:nth-child(2)::after {
+  background: var(--accent);
+  width: 72%;
+}
+
+.visual-anticheat span:nth-child(3)::after {
+  background: var(--amber);
+  width: 48%;
+}
+
 .visual-parallax {
   align-items: end;
   gap: 0.7rem;
@@ -677,6 +727,41 @@ pre {
 
 .visual-roblox span:nth-child(2n) {
   transform: rotate(-12deg);
+}
+
+.visual-servers {
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: end center;
+}
+
+.visual-servers span {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(55, 198, 192, 0.14);
+  height: 5rem;
+  width: 100%;
+}
+
+.visual-servers span:nth-child(1) {
+  background: var(--green);
+  height: 7rem;
+}
+
+.visual-servers span:nth-child(2) {
+  background: var(--accent);
+  height: 9rem;
+}
+
+.visual-servers span:nth-child(3) {
+  background: var(--violet);
+  height: 6rem;
+}
+
+.visual-servers span:nth-child(4) {
+  background: var(--amber);
+  height: 8rem;
 }
 
 .visual-subtitles {
@@ -972,6 +1057,7 @@ pre {
   }
 
   .projects-grid,
+  .experience-strip,
   .skills-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1009,6 +1095,7 @@ pre {
   }
 
   .intro-grid,
+  .experience-strip,
   .projects-grid,
   .skills-layout,
   .metric-row {
