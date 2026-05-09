@@ -584,3 +584,21 @@ langToggle?.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   updateLanguage(currentLang);
 });
+
+// Back to Top button logic
+const backToTopBtn = document.querySelector("[data-back-to-top]");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    backToTopBtn?.classList.add("is-visible");
+  } else {
+    backToTopBtn?.classList.remove("is-visible");
+  }
+});
+
+backToTopBtn?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

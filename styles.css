@@ -1271,6 +1271,46 @@ pre {
   padding-top: 2rem;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+  background: var(--surface-strong);
+  transform: translateY(-4px);
+  color: var(--accent);
+}
+
+.back-to-top svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 @media (max-width: 720px) {
   .stats-content {
     padding: 1rem;
