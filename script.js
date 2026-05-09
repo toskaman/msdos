@@ -65,6 +65,9 @@ projectCards.forEach((card) => {
 
   const open = () => {
     if (!dialog || !dialogTitle || !dialogType || !dialogSummary || !dialogTags) return;
+    const previousScrollX = window.scrollX;
+    const previousScrollY = window.scrollY;
+
     dialogTitle.textContent = card.dataset.title ?? "";
     dialogSummary.textContent = card.dataset.summary ?? "";
     dialogType.textContent = card.querySelector(".project-type")?.textContent ?? "Projet";
@@ -79,6 +82,9 @@ projectCards.forEach((card) => {
         dialogTags.appendChild(tagElement);
       });
     dialog.showModal();
+    window.requestAnimationFrame(() => {
+      window.scrollTo(previousScrollX, previousScrollY);
+    });
   };
 
   card.addEventListener("click", open);

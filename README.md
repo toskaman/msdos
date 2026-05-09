@@ -13,11 +13,11 @@ Version actuelle : mai 2026, mode nuit par defaut.
 - `script.js` : recherche, filtres, theme clair/sombre, animation du hero.
 - `assets/favicon.svg` : icone du site.
 
-Les liens de contact sont volontairement en placeholders. Remplace :
+Contacts configures :
 
 - `https://github.com/toskaman`
-- `mailto:ton.email@example.com`
-- le lien Discord `href="#"`
+- `mailto:toskaman5962+portfolio@gmail.com`
+- Discord : `therealcopper`
 
 ## Publier sur GitHub Pages
 

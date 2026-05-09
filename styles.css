@@ -191,8 +191,7 @@ svg {
 
 .hero-content,
 .hero-panel,
-.section,
-.project-dialog {
+.section {
   position: relative;
 }
 
@@ -918,19 +917,20 @@ pre {
   color: var(--bg);
 }
 
-.contact-missing {
-  cursor: default;
-  opacity: 0.62;
-}
-
 .project-dialog {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   color: var(--ink);
+  left: 50%;
+  margin: 0;
   max-width: min(92vw, 38rem);
   padding: 1.35rem;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 38rem);
 }
 
 .project-dialog::backdrop {
