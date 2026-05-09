@@ -145,7 +145,43 @@ function drawNetwork(time = 0) {
   const height = canvas.clientHeight;
 
   ctx.clearRect(0, 0, width, height);
-...
+  ctx.lineWidth = 1;
+
+  const points = nodes.map((node) => {
+    const drift = prefersReducedMotion ? 0 : Math.sin(time * node.speed + node.phase) * 24;
+    return {
+      x: node.x * width + drift,
+      y: node.y * height + Math.cos(time * node.speed + node.phase) * 16,
+      radius: node.radius,
+    };
+  });
+
+  for (let i = 0; i < points.length; i += 1) {
+    for (let j = i + 1; j < points.length; j += 1) {
+      const a = points[i];
+      const b = points[j];
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
+      if (distance < 170) {
+        ctx.globalAlpha = Math.max(0, 0.22 - distance / 800);
+        ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--accent").trim();
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+    }
+  }
+
+  points.forEach((point, index) => {
+    ctx.globalAlpha = index % 4 === 0 ? 0.9 : 0.42;
+    ctx.fillStyle = index % 4 === 0
+      ? getComputedStyle(root).getPropertyValue("--coral").trim()
+      : getComputedStyle(root).getPropertyValue("--accent").trim();
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
   ctx.globalAlpha = 1;
   if (!prefersReducedMotion && isHeroVisible) {
     animationId = requestAnimationFrame(drawNetwork);
@@ -199,7 +235,7 @@ const translations = {
     nav_contact: "Contact",
     hero_date: "Portfolio Logiciels & Systèmes — 2026",
     hero_title: "Outils, Développement, Serveurs, Tech & IA",
-    hero_lead: "Passionné d'informatique depuis mes 13 ans, je conçois des solutions sur mesure pour répondre à des défis concrets. Alliant une expertise solide en Lua à une veille constante sur les nouvelles technologies, j'aime piloter plusieurs projets de front pour bâtir des systèmes stables, automatisés et intelligents.",
+    hero_lead: "Passionné d'informatique depuis mes 13 ans, je conçois des solutions sur mesure pour répondre à des défis concrets. Je travaille principalement en Lua, souvent sur plusieurs projets en parallèle, tout en continuant d'apprendre de nouveaux langages et technologies pour intégrer les derniers workflows IA. Mon objectif : bâtir des systèmes stables, automatisés et intelligents.",
     btn_projects: "Voir les projets",
     btn_contact: "Me contacter",
     terminal_content: "C:\\>PROFILE.EXE /SCAN\n\n[SCAN DU PROFIL...]\nEXPERIENCE=20_ANS\nFOCUS=TOOLS,AUTOMATION,ROBLOX,APIS,IA\nLANGAGE=LUA\nWORKFLOW=MULTI_PROJETS,ORIENTE_BESOIN\nSERVEURS=MINECRAFT,GMOD,FIVEM\nLEGACY=PREMIERS_ANTICHEATS_GMOD\nIA_STACK=CLAUDE,GEMINI,DEEPSEEK,LOCAL\nMODE=PASSION_DRIVEN,LOCAL_FIRST",
@@ -330,7 +366,7 @@ const translations = {
     nav_contact: "Contact",
     hero_date: "Software & Systems Portfolio — 2026",
     hero_title: "Tools, Development, Servers, Tech & AI",
-    hero_lead: "Since the age of 13, technology has been my sandbox. I build custom solutions to solve real-world challenges, blending years of expertise in Lua with a constant drive to master new stacks, servers, and AI workflows. I thrive on multitasking and delivering stable, automated systems.",
+    hero_lead: "Since the age of 13, technology has been my sandbox. I build custom solutions to solve real-world challenges, primarily working in Lua on several projects in parallel. I am constantly learning new languages and technologies to stay at the forefront of AI workflows and deliver stable, automated systems.",
     btn_projects: "View Projects",
     btn_contact: "Contact Me",
     terminal_content: "C:\\>PROFILE.EXE /SCAN\n\n[SCANNING PROFILE...]\nEXPERIENCE=20_YEARS\nFOCUS=TOOLS,AUTOMATION,ROBLOX,APIS,AI\nLANGUAGE=LUA\nWORKFLOW=MULTI_PROJECT,NEEDS_DRIVEN\nSERVERS=MINECRAFT,GMOD,FIVEM\nLEGACY=EARLY_ANTICHEATS_GMOD\nAI_STACK=CLAUDE,GEMINI,DEEPSEEK,LOCAL\nMODE=PASSION_DRIVEN,LOCAL_FIRST",
