@@ -276,6 +276,39 @@ h1 {
   overflow: hidden;
 }
 
+.terminal-window.dos-mode {
+  background: #000;
+  border: 2px solid #ccc;
+  border-radius: 0;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.5);
+}
+
+.terminal-window.dos-mode .terminal-bar {
+  background: #ccc;
+  border-bottom: 2px solid #888;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.terminal-window.dos-mode .terminal-bar::before {
+  content: "C:\> PROFILE.EXE";
+}
+
+.terminal-window.dos-mode .terminal-bar span {
+  display: none;
+}
+
+.terminal-window.dos-mode pre {
+  color: #0f0; /* Matrix green or #ccc for classic grey */
+  font-family: "Consolas", "Courier New", monospace;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
 .terminal-bar {
   align-items: center;
   background: var(--surface-strong);
