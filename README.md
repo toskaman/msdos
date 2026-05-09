@@ -2,7 +2,9 @@
 
 Site portfolio statique pour presenter des projets, competences et liens de contact.
 
-URL cible : `https://toskaman.github.io/`
+URL publique : `https://toskaman.github.io/msdos/`
+
+Le depot source `toskaman.github.io` est prive. Le site est publie via le depot public de deploiement `msdos`, car le plan GitHub actuel ne supporte pas GitHub Pages directement depuis ce depot prive.
 
 Version actuelle : mai 2026, avec parcours informatique, Lua, APIs, IA, modeles locaux, serveurs de jeux et contacts publics.
 
@@ -28,4 +30,4 @@ Contacts configures :
 5. Branch : `main`, dossier `/root`.
 6. GitHub donnera une URL du type `https://ton-pseudo.github.io/portfolio/`.
 
-Ce dossier est prevu pour le depot `toskaman.github.io`, donc la publication se fait a la racine du site GitHub Pages.
+Ce dossier est le depot source prive. Pour publier, pousser une copie statique vers le depot public `msdos`.
