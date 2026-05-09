@@ -184,7 +184,6 @@ if (canvas && ctx) {
 
 // Multi-language support
 const langToggle = document.querySelector("[data-lang-toggle]");
-const langIcon = document.getElementById("lang-icon");
 let currentLang = localStorage.getItem("portfolio-lang") || "en";
 
 const translations = {
@@ -205,7 +204,6 @@ const translations = {
     focus_title: "Des outils qui résolvent des problèmes concrets",
     p_rbx_manager: "Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.",
     terminal_content: "C:\\>PROFILE.EXE /SCAN\n\n[SCANNAGE DU PROFIL...]\nEXPERIENCE=20_ANS\nFOCUS=TOOLS,AUTOMATION,ROBLOX,APIS,IA\nLANGAGE=LUA\nWORKFLOW=MULTI_PROJETS,ORIENTE_BESOIN\nSERVEURS=MINECRAFT,GMOD,FIVEM\nLEGACY=PREMIERS_ANTICHEATS_GMOD\nIA_STACK=CLAUDE,GEMINI,DEEPSEEK,LOCAL\nMODE=PASSION_DRIVEN,LOCAL_FIRST",
-    stats_countries: "Visionnage par pays :",
     copyright: "&copy; 2026 MSDOS - Tous droits réservés."
   },
   en: {
@@ -225,7 +223,6 @@ const translations = {
     focus_title: "Tools that solve real-world problems",
     p_rbx_manager: "New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.",
     terminal_content: "C:\\>PROFILE.EXE /SCAN\n\n[SCANNING PROFILE...]\nEXPERIENCE=20_YEARS\nFOCUS=TOOLS,AUTOMATION,ROBLOX,APIS,AI\nLANGUAGE=LUA\nWORKFLOW=MULTI_PROJECT,NEEDS_DRIVEN\nSERVERS=MINECRAFT,GMOD,FIVEM\nLEGACY=EARLY_ANTICHEATS_GMOD\nAI_STACK=CLAUDE,GEMINI,DEEPSEEK,LOCAL\nMODE=PASSION_DRIVEN,LOCAL_FIRST",
-    stats_countries: "Views by country:",
     copyright: "&copy; 2026 MSDOS - All rights reserved."
   }
 };
@@ -237,7 +234,6 @@ function updateLanguage(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
-  langIcon.textContent = lang === "fr" ? "🇫🇷" : "🇺🇸";
   document.documentElement.lang = lang;
 }
 
