@@ -59,6 +59,11 @@ const dialogType = document.querySelector("[data-dialog-type]");
 const dialogSummary = document.querySelector("[data-dialog-summary]");
 const dialogTags = document.querySelector("[data-dialog-tags]");
 
+const zoomDialog = document.querySelector("[data-zoom-dialog]");
+const zoomClose = document.querySelector("[data-zoom-close]");
+const zoomContent = document.querySelector("#zoom-content");
+const zoomBtn = document.querySelector("[data-zoom-btn]");
+
 projectCards.forEach((card) => {
   card.tabIndex = 0;
   card.setAttribute("role", "button");
@@ -76,7 +81,10 @@ projectCards.forEach((card) => {
       const clonedVisual = originalVisual.cloneNode(true);
       clonedVisual.style.width = "100%";
       clonedVisual.style.height = "100%";
-      clonedVisual.style.minHeight = "auto";
+      clonedVisual.style.minHeight = "20rem";
+      clonedVisual.style.display = "flex";
+      clonedVisual.style.justifyContent = "center";
+      clonedVisual.style.alignItems = "center";
       dialogVisual.appendChild(clonedVisual);
     }
 
@@ -108,6 +116,36 @@ projectCards.forEach((card) => {
   });
 });
 
+zoomBtn?.addEventListener("click", () => {
+  if (!dialogVisual || !zoomDialog || !zoomContent) return;
+  zoomContent.innerHTML = "";
+  const mainImage = dialogVisual.querySelector("img");
+  if (mainImage) {
+    const zoomedImg = mainImage.cloneNode(true);
+    zoomedImg.style.width = "auto";
+    zoomedImg.style.height = "auto";
+    zoomedImg.style.maxWidth = "90vw";
+    zoomedImg.style.maxHeight = "90vh";
+    zoomedImg.style.objectFit = "contain";
+    zoomedImg.style.boxShadow = "0 0 50px rgba(0,0,0,0.5)";
+    zoomContent.appendChild(zoomedImg);
+  } else {
+    const visualContent = dialogVisual.innerHTML;
+    zoomContent.innerHTML = visualContent;
+    const items = zoomContent.querySelectorAll("img, svg");
+    items.forEach(item => {
+      item.style.width = "auto";
+      item.style.height = "auto";
+      item.style.maxWidth = "80vw";
+      item.style.maxHeight = "80vh";
+    });
+  }
+  zoomDialog.showModal();
+});
+
+zoomClose?.addEventListener("click", () => zoomDialog?.close());
+zoomDialog?.addEventListener("click", (e) => { if (e.target === zoomDialog) zoomDialog.close(); });
+
 closeDialogButton?.addEventListener("click", () => dialog?.close());
 dialog?.addEventListener("click", (event) => {
   if (event.target === dialog) {
@@ -118,11 +156,11 @@ dialog?.addEventListener("click", (event) => {
 const canvas = document.querySelector("#hero-canvas");
 const ctx = canvas?.getContext("2d");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const nodes = Array.from({ length: 34 }, (_, index) => ({
+const nodes = Array.from({ length: 42 }, (_, index) => ({
   x: Math.random(),
   y: Math.random(),
-  radius: index % 5 === 0 ? 3.2 : 2.1,
-  speed: 0.0006 + Math.random() * 0.0012,
+  radius: index % 6 === 0 ? 3.5 : 1.8,
+  speed: 0.0004 + Math.random() * 0.0008,
   phase: Math.random() * Math.PI * 2,
 }));
 
@@ -145,7 +183,18 @@ function drawNetwork(time = 0) {
   const height = canvas.clientHeight;
 
   ctx.clearRect(0, 0, width, height);
-  ctx.lineWidth = 1;
+
+  // Subtle Tech Grid
+  ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--line").trim();
+  ctx.globalAlpha = 0.06;
+  ctx.lineWidth = 0.5;
+  const gridSize = 60;
+  for (let x = 0; x < width; x += gridSize) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
+  }
+  for (let y = 0; y < height; y += gridSize) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
+  }
 
   const points = nodes.map((node) => {
     const drift = prefersReducedMotion ? 0 : Math.sin(time * node.speed + node.phase) * 24;
@@ -162,7 +211,7 @@ function drawNetwork(time = 0) {
       const b = points[j];
       const distance = Math.hypot(a.x - b.x, a.y - b.y);
       if (distance < 170) {
-        ctx.globalAlpha = Math.max(0, 0.22 - distance / 800);
+        ctx.globalAlpha = Math.max(0, 0.18 - distance / 900);
         ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--accent").trim();
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -173,8 +222,8 @@ function drawNetwork(time = 0) {
   }
 
   points.forEach((point, index) => {
-    ctx.globalAlpha = index % 4 === 0 ? 0.9 : 0.42;
-    ctx.fillStyle = index % 4 === 0
+    ctx.globalAlpha = index % 5 === 0 ? 0.8 : 0.35;
+    ctx.fillStyle = index % 5 === 0
       ? getComputedStyle(root).getPropertyValue("--coral").trim()
       : getComputedStyle(root).getPropertyValue("--accent").trim();
     ctx.beginPath();
@@ -307,6 +356,7 @@ const translations = {
     p_rbx_games: "Création de plusieurs expériences Roblox avec systèmes de gameplay, progression et interfaces.",
     title_rbx_exploit: "Roblox Exploit (Terminé)",
     p_rbx_exploit: "Création massive de scripts (2K+) pour Roblox. Cette activité est désormais close mais a forgé une expertise solide en Lua.",
+    legacy_status: "[ TERMINE ]",
     title_servers: "Serveurs de jeux ultra moddés",
     p_servers: "Création de serveurs Minecraft, GMod, FiveM et autres environnements lourdement customisés.",
     title_subtitles: "Traducteur de sous-titres en masse",
@@ -440,6 +490,7 @@ const translations = {
     p_rbx_games: "Creation of several Roblox experiences with gameplay, progression, and interface systems.",
     title_rbx_exploit: "Roblox Exploit (Legacy)",
     p_rbx_exploit: "Massive creation of scripts (2K+) for Roblox. This activity is now closed but forged a solid expertise in Lua.",
+    legacy_status: "[ DONE ]",
     title_servers: "Ultra-Modded Game Servers",
     p_servers: "Creation of Minecraft, GMod, FiveM servers, and other heavily customized environments.",
     title_subtitles: "Bulk Subtitle Translator",
@@ -448,7 +499,7 @@ const translations = {
     p_android: "PC tool to clean an Android device, remove useless apps, and simplify maintenance.",
     title_discord: "Complete Discord Bot",
     p_discord: "Mini-games, complete dungeon/trading/farming game, moderation, logs, and continuous maintenance for 2+ years.",
-    title_updater: "1-Click Software Update",
+    title_updater: "1-1-Click Software Update",
     p_updater: "Quick update of installed applications, with retrieval from official sources.",
     title_extension: "Chrome Extensions",
     p_extension: "Audio visualizer, price per kilo to compare food orders, web automations, and practical tools.",
@@ -512,6 +563,11 @@ function updateLanguage(lang) {
     if (translations[lang][key]) {
       el.setAttribute("content", translations[lang][key]);
     }
+  });
+
+  // Handle specific dynamic content like legacy status
+  document.querySelectorAll(".legacy-badge").forEach(el => {
+    el.textContent = translations[lang].legacy_status;
   });
 
   if (langDot) {
