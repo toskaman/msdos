@@ -136,53 +136,35 @@ function syncCanvasSize() {
   ctx?.setTransform(ratio, 0, 0, ratio, 0, 0);
 }
 
+let animationId;
+let isHeroVisible = true;
+
 function drawNetwork(time = 0) {
-  if (!canvas || !ctx) return;
+  if (!canvas || !ctx || !isHeroVisible) return;
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
 
   ctx.clearRect(0, 0, width, height);
-  ctx.lineWidth = 1;
-
-  const points = nodes.map((node) => {
-    const drift = prefersReducedMotion ? 0 : Math.sin(time * node.speed + node.phase) * 24;
-    return {
-      x: node.x * width + drift,
-      y: node.y * height + Math.cos(time * node.speed + node.phase) * 16,
-      radius: node.radius,
-    };
-  });
-
-  for (let i = 0; i < points.length; i += 1) {
-    for (let j = i + 1; j < points.length; j += 1) {
-      const a = points[i];
-      const b = points[j];
-      const distance = Math.hypot(a.x - b.x, a.y - b.y);
-      if (distance < 170) {
-        ctx.globalAlpha = Math.max(0, 0.22 - distance / 800);
-        ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--accent").trim();
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-      }
-    }
-  }
-
-  points.forEach((point, index) => {
-    ctx.globalAlpha = index % 4 === 0 ? 0.9 : 0.42;
-    ctx.fillStyle = index % 4 === 0
-      ? getComputedStyle(root).getPropertyValue("--coral").trim()
-      : getComputedStyle(root).getPropertyValue("--accent").trim();
-    ctx.beginPath();
-    ctx.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
+...
   ctx.globalAlpha = 1;
-  if (!prefersReducedMotion) {
-    requestAnimationFrame(drawNetwork);
+  if (!prefersReducedMotion && isHeroVisible) {
+    animationId = requestAnimationFrame(drawNetwork);
   }
+}
+
+// Performance Optimization: Stop animation when not visible (2026 Eco-Design Standard)
+if (window.IntersectionObserver && canvas) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      isHeroVisible = entry.isIntersecting;
+      if (isHeroVisible && !prefersReducedMotion) {
+        requestAnimationFrame(drawNetwork);
+      } else {
+        cancelAnimationFrame(animationId);
+      }
+    });
+  }, { threshold: 0.1 });
+  observer.observe(document.querySelector(".hero-section"));
 }
 
 if (canvas && ctx) {
@@ -197,7 +179,13 @@ if (canvas && ctx) {
 // Multi-language support
 const langToggle = document.querySelector("[data-lang-toggle]");
 const langDot = document.getElementById("lang-switch-dot");
+
+// FORCE ENGLISH DEFAULT: Always start with English for new sessions
 let currentLang = localStorage.getItem("portfolio-lang") || "en";
+if (!localStorage.getItem("portfolio-lang")) {
+  currentLang = "en";
+  localStorage.setItem("portfolio-lang", "en");
+}
 
 const translations = {
   fr: {
