@@ -181,3 +181,61 @@ if (canvas && ctx) {
     drawNetwork();
   });
 }
+
+// Multi-language support
+const langToggle = document.querySelector("[data-lang-toggle]");
+const langIcon = document.getElementById("lang-icon");
+let currentLang = localStorage.getItem("portfolio-lang") || "en";
+
+const translations = {
+  fr: {
+    nav_projects: "Projets",
+    nav_skills: "Compétences",
+    nav_contact: "Contact",
+    hero_date: "Portfolio technique - mai 2026",
+    hero_title: "Tools, automation & Roblox",
+    hero_lead: "Passionné d'informatique depuis mes 13 ans, je crée souvent mes propres logiciels pour répondre à mes besoins. Je travaille principalement en Lua, parfois sur plusieurs projets en parallèle, et je continue d'apprendre d'autres langages, technologies et IA pour rester à jour.",
+    btn_projects: "Voir les projets",
+    btn_contact: "Me contacter",
+    focus_eyebrow: "Ce que je construis",
+    focus_title: "Des outils qui résolvent des problèmes concrets",
+    p_rbx_manager: "Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.",
+    stats_countries: "Visionnage par pays :",
+    copyright: "&copy; 2026 MSDOS - Tous droits réservés."
+  },
+  en: {
+    nav_projects: "Projects",
+    nav_skills: "Skills",
+    nav_contact: "Contact",
+    hero_date: "Technical Portfolio - May 2026",
+    hero_title: "Tools, Automation & Roblox",
+    hero_lead: "Passionate about computing since age 13, I often create my own software to meet my needs. I primarily work in Lua, sometimes on several projects in parallel, and I continue to learn other languages, technologies, and AI to stay up to date.",
+    btn_projects: "View Projects",
+    btn_contact: "Contact Me",
+    focus_eyebrow: "What I Build",
+    focus_title: "Tools that solve real-world problems",
+    p_rbx_manager: "New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.",
+    stats_countries: "Views by country:",
+    copyright: "&copy; 2026 MSDOS - All rights reserved."
+  }
+};
+
+function updateLanguage(lang) {
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const key = el.getAttribute("data-t");
+    if (translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  langIcon.textContent = lang === "fr" ? "🇫🇷" : "🇺🇸";
+  document.documentElement.lang = lang;
+}
+
+langToggle?.addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "fr" : "en";
+  localStorage.setItem("portfolio-lang", currentLang);
+  updateLanguage(currentLang);
+});
+
+// Initialize language
+updateLanguage(currentLang);
