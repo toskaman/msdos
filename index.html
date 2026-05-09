@@ -1,27 +1,27 @@
 <!doctype html>
-<html lang="fr" data-theme="dark">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Portfolio développeur : 20 ans d'expérience informatique, Lua, logiciels Windows, Roblox, automatisation, bots Discord, API, IA, modèles locaux, serveurs de jeux et extensions Chrome."
+      content="Developer Portfolio: 20 years of IT experience, Lua, Windows software, Roblox, automation, Discord bots, API, AI, local models, game servers and Chrome extensions."
     />
     <meta name="theme-color" content="#111315" />
-    <meta property="og:title" content="MSDOS | Portfolio développeur" />
+    <meta property="og:title" content="MSDOS | Developer Portfolio" />
     <meta
       property="og:description"
-      content="Portfolio : 20 ans d'expérience informatique, Lua, tools Windows, automatisation, Roblox, bots Discord, API, IA, modèles locaux, serveurs de jeux et logiciels local-first."
+      content="Portfolio: 20 years of IT experience, Lua, Windows tools, automation, Roblox, Discord bots, API, AI, local models, game servers and local-first software."
     />
     <meta property="og:type" content="website" />
-    <title>MSDOS | Portfolio développeur</title>
+    <title>MSDOS | Developer Portfolio</title>
     <link rel="icon" href="assets/favicon.svg?v=2026-05-09-7" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=2026-05-09-8" />
   </head>
   <body>
     <div class="page-shell">
       <header class="site-header" data-header>
-        <a class="brand" href="#top" aria-label="Retour à l'accueil">
+        <a class="brand" href="#top" aria-label="Back to home">
           <span class="brand-mark" aria-hidden="true">M</span>
           <span>
             <strong>MSDOS</strong>
@@ -29,9 +29,9 @@
           </span>
         </a>
 
-        <nav class="site-nav" aria-label="Navigation principale">
-          <a href="#projets" data-t="nav_projects">Projets</a>
-          <a href="#competences" data-t="nav_skills">Compétences</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#projets" data-t="nav_projects">Projects</a>
+          <a href="#competences" data-t="nav_skills">Skills</a>
           <a href="#contact" data-t="nav_contact">Contact</a>
         </nav>
 
@@ -40,7 +40,7 @@
             <span id="lang-icon">🇺🇸 / 🇫🇷</span>
           </button>
 
-          <button class="icon-button" type="button" data-theme-toggle aria-label="Changer le theme">
+          <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle theme">
             <svg aria-hidden="true" viewBox="0 0 24 24">
               <path d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
               <circle cx="12" cy="12" r="4.2" />
@@ -53,12 +53,10 @@
         <section class="hero-section" aria-labelledby="hero-title">
           <canvas id="hero-canvas" width="1400" height="760" aria-hidden="true"></canvas>
           <div class="hero-content">
-            <p class="eyebrow">Portfolio technique - mai 2026</p>
-            <h1 id="hero-title">Tools, automation & Roblox</h1>
-            <p class="hero-lead">
-              Passionné d'informatique depuis mes 13 ans, je crée souvent mes propres logiciels pour répondre
-              à mes besoins. Je travaille principalement en Lua, parfois sur plusieurs projets en parallèle,
-              et je continue d'apprendre d'autres langages, technologies et IA pour rester à jour.
+            <p class="eyebrow" data-t="hero_date">Technical Portfolio - May 2026</p>
+            <h1 id="hero-title" data-t="hero_title">Tools, Automation & Roblox</h1>
+            <p class="hero-lead" data-t="hero_lead">
+              Passionate about computing since age 13, I often create my own software to meet my needs. I primarily work in Lua, sometimes on several projects in parallel, and I continue to learn other languages, technologies, and AI to stay up to date.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#projets">
@@ -66,135 +64,135 @@
                   <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" />
                   <path d="m9 9 3 3-3 3M14 15h2" />
                 </svg>
-                Voir les projets
+                <span data-t="btn_projects">View Projects</span>
               </a>
               <a class="button secondary" href="#contact">
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5z" />
                   <path d="m6 7 6 5 6-5" />
                 </svg>
-                Me contacter
+                <span data-t="btn_contact">Contact Me</span>
               </a>
             </div>
           </div>
 
-          <aside class="hero-panel" aria-label="Résumé rapide">
+          <aside class="hero-panel" aria-label="Quick summary">
             <div class="terminal-window dos-mode">
               <div class="terminal-bar" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
               <pre><code data-t="terminal_content">C:\>PROFILE.EXE /SCAN
 
-[SCANNAGE DU PROFIL...]
-EXPERIENCE=20_ANS
-FOCUS=TOOLS,AUTOMATION,ROBLOX,APIS,IA
-LANGAGE=LUA
-WORKFLOW=MULTI_PROJETS,ORIENTE_BESOIN
-SERVEURS=MINECRAFT,GMOD,FIVEM
-LEGACY=PREMIERS_ANTICHEATS_GMOD
-IA_STACK=CLAUDE,GEMINI,DEEPSEEK,LOCAL
+[SCANNING PROFILE...]
+EXPERIENCE=20_YEARS
+FOCUS=TOOLS,AUTOMATION,ROBLOX,APIS,AI
+LANGUAGE=LUA
+WORKFLOW=MULTI_PROJECT,NEEDS_DRIVEN
+SERVERS=MINECRAFT,GMOD,FIVEM
+LEGACY=EARLY_ANTICHEATS_GMOD
+AI_STACK=CLAUDE,GEMINI,DEEPSEEK,LOCAL
 MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </div>
-            <div class="metric-row" aria-label="Indicateurs">
+            <div class="metric-row" aria-label="Metrics">
               <div>
-                <strong>20 ans</strong>
-                <span>Informatique</span>
+                <strong>20 <span data-t="metric_years">years</span></strong>
+                <span data-t="metric_it">Computing</span>
               </div>
               <div>
                 <strong>Lua</strong>
-                <span>Langage principal</span>
+                <span data-t="metric_lang">Primary Language</span>
               </div>
               <div>
-                <strong>Veille</strong>
-                <span>Tech & IA</span>
+                <strong><span data-t="metric_watch">Watch</span></strong>
+                <span data-t="metric_tech">Tech & AI</span>
               </div>
             </div>
           </aside>
         </section>
 
-        <section class="section intro-section" aria-label="Positionnement">
+        <section class="section intro-section" aria-label="Positioning">
           <div class="section-copy">
-            <p class="eyebrow" data-t="focus_eyebrow">Ce que je construis</p>
-            <h2 data-t="focus_title">Des outils qui résolvent des problèmes concrets</h2>
+            <p class="eyebrow" data-t="focus_eyebrow">What I Build</p>
+            <h2 data-t="focus_title">Tools that solve real-world problems</h2>
           </div>
           <div class="intro-grid">
             <article class="focus-item">
               <span class="focus-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M4 6h16M7 10h10M9 14h6M11 18h2" /></svg>
               </span>
-              <h3>Applications desktop</h3>
-              <p>Optimisation Windows, maintenance, debloat Android, traduction locale et gestion d'outils.</p>
+              <h3 data-t="focus_desktop">Desktop Applications</h3>
+              <p data-t="focus_desktop_desc">Windows optimization, maintenance, Android debloating, local translation, and tool management.</p>
             </article>
             <article class="focus-item">
               <span class="focus-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M5 7h14v10H5z" /><path d="M8 20h8M10 17v3M14 17v3" /><path d="m9 12 2 2 4-5" /></svg>
               </span>
-              <h3>Automation & bots</h3>
-              <p>Bots Discord complets, APIs perso, automatisation web, moderation, logs et systemes persistants.</p>
+              <h3 data-t="focus_automation">Automation & Bots</h3>
+              <p data-t="focus_automation_desc">Complete Discord bots, personal APIs, web automation, moderation, logs, and persistent systems.</p>
             </article>
             <article class="focus-item">
               <span class="focus-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M4 15 12 5l8 10" /><path d="M7 15h10l-2 5H9z" /><path d="M12 5v15" /></svg>
               </span>
-              <h3>Expériences de jeu</h3>
-              <p>Jeux Roblox, serveurs ultra moddés, génération de cartes semi-3D et gameplay long terme.</p>
+              <h3 data-t="focus_gaming">Gaming Experiences</h3>
+              <p data-t="focus_gaming_desc">Roblox games, ultra-modded servers, semi-3D map generation, and long-term gameplay.</p>
             </article>
           </div>
-          <div class="experience-strip" aria-label="Parcours informatique">
+          <div class="experience-strip" aria-label="IT Journey">
             <article>
               <span>01</span>
-              <h3>20 ans d'expérience</h3>
-              <p>Dans l'informatique depuis mes 13 ans, avec une pratique continue des outils, serveurs, scripts et logiciels.</p>
+              <h3 data-t="exp_20_title">20 Years of Experience</h3>
+              <p data-t="exp_20_desc">In computing since age 13, with continuous practice of tools, servers, scripts, and software.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>Anticheats GMod / DarkRP</h3>
-              <p>Travail sur des anticheats durant les premières années de GMod/DarkRP, parmi les premiers projets du genre.</p>
+              <h3 data-t="exp_anticheat_title">GMod / DarkRP Anticheats</h3>
+              <p data-t="exp_anticheat_desc">Work on anticheats during the early years of GMod/DarkRP, among the first projects of its kind.</p>
             </article>
             <article>
               <span>03</span>
-              <h3 data-t="strip_servers_title">Serveurs & Communautés</h3>
-              <p data-t="strip_servers_desc">Modérateur, Head Mod et Développeur sur plusieurs serveurs de jeux et communautés actives (Minecraft, GMod, FiveM).</p>
+              <h3 data-t="strip_servers_title">Servers & Communities</h3>
+              <p data-t="strip_servers_desc">Moderator, Head Mod, and Developer on several game servers and active communities (Minecraft, GMod, FiveM).</p>
             </article>
             <article>
               <span>04</span>
-              <h3>APIs & passion</h3>
-              <p>Utilisation et création d'APIs personnelles pour connecter des outils, automatiser des workflows et aller plus vite.</p>
+              <h3 data-t="exp_api_title">APIs & Passion</h3>
+              <p data-t="exp_api_desc">Use and creation of personal APIs to connect tools, automate workflows, and go faster.</p>
             </article>
             <article>
               <span>05</span>
-              <h3>IA & modèles locaux</h3>
-              <p>Travail avec Claude, Gemini, DeepSeek, versions CLI et de nombreux modèles locaux pour tester, comparer et intégrer l'IA.</p>
+              <h3 data-t="exp_ai_title">AI & Local Models</h3>
+              <p data-t="exp_ai_desc">Work with Claude, Gemini, DeepSeek, CLI versions, and many local models to test, compare, and integrate AI.</p>
             </article>
             <article>
               <span>06</span>
-              <h3>Apprentissage continu</h3>
-              <p>Base principale en Lua, exploration d'autres langages, veille permanente sur les nouvelles technologies et travail en parallèle sur plusieurs projets.</p>
+              <h3 data-t="exp_learning_title">Continuous Learning</h3>
+              <p data-t="exp_learning_desc">Primary base in Lua, exploration of other languages, permanent watch on new technologies, and parallel work on multiple projects.</p>
             </article>
           </div>
         </section>
 
         <section class="section projects-section" id="projets" aria-labelledby="projects-title">
           <div class="section-copy">
-            <p class="eyebrow">Projets</p>
-            <h2 id="projects-title">Sélection de réalisations</h2>
+            <p class="eyebrow" data-t="projects_eyebrow">Projects</p>
+            <h2 id="projects-title" data-t="projects_title">Selection of Work</h2>
           </div>
 
-          <div class="project-controls" aria-label="Filtres des projets">
+          <div class="project-controls" aria-label="Project filters">
             <label class="search-box">
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7" />
                 <path d="m16 16 4 4" />
               </svg>
-              <input type="search" data-project-search placeholder="Rechercher un projet ou une compétence" />
+              <input type="search" data-project-search placeholder="Search for a project or skill" data-t-placeholder="search_placeholder" />
             </label>
-            <div class="filter-row" role="list" aria-label="Catégories">
-              <button class="filter-button active" type="button" data-filter="all">Tout</button>
-              <button class="filter-button" type="button" data-filter="desktop">Desktop</button>
-              <button class="filter-button" type="button" data-filter="automation">Automation</button>
-              <button class="filter-button" type="button" data-filter="game">Jeux</button>
-              <button class="filter-button" type="button" data-filter="security">Sécurité</button>
-              <button class="filter-button" type="button" data-filter="extension">Extensions</button>
+            <div class="filter-row" role="list" aria-label="Categories">
+              <button class="filter-button active" type="button" data-filter="all" data-t="filter_all">All</button>
+              <button class="filter-button" type="button" data-filter="desktop" data-t="filter_desktop">Desktop</button>
+              <button class="filter-button" type="button" data-filter="automation" data-t="filter_automation">Automation</button>
+              <button class="filter-button" type="button" data-filter="game" data-t="filter_game">Games</button>
+              <button class="filter-button" type="button" data-filter="security" data-t="filter_security">Security</button>
+              <button class="filter-button" type="button" data-filter="extension" data-t="filter_extension">Extensions</button>
             </div>
           </div>
 
@@ -214,9 +212,9 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               <div class="project-body">
                 <span class="project-type">Desktop app</span>
                 <h3>Roblox Account Manager V2</h3>
-                <p data-t="p_rbx_manager">Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.</p>
+                <p data-t="p_rbx_manager">New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.</p>
                 <p style="margin-top: 10px;">
-                  <a href="https://discord.gg/zNpj8ctH9p" target="_blank" style="color: #5865F2; text-decoration: underline; font-weight: bold;">Rejoindre le Discord</a>
+                  <a href="https://discord.gg/zNpj8ctH9p" target="_blank" style="color: #5865F2; text-decoration: underline; font-weight: bold;" data-t="link_discord">Join Discord</a>
                 </p>
                 <ul class="tag-list" aria-label="Technologies et axes">
                   <li>Roblox</li><li>Multi-comptes</li><li>Automation</li>
@@ -236,8 +234,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Windows tool</span>
-                <h3>Tool d'optimisation technicien</h3>
-                <p>Outil hyper complet pour accélérer, nettoyer, diagnostiquer et appliquer des réglages utiles sur PC.</p>
+                <h3 data-t="title_optimizer">Technician Optimization Tool</h3>
+                <p data-t="p_optimizer">Hyper-complete tool to speed up, clean, diagnose, and apply useful settings on PC.</p>
                 <ul class="tag-list"><li>Technicien</li><li>Windows</li><li>Performance</li></ul>
               </div>
             </article>
@@ -254,8 +252,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Security awareness</span>
-                <h3>Audit de caméras exposées</h3>
-                <p>Découverte de caméras mal sécurisées à des fins d'audit, de sensibilisation et de prévention.</p>
+                <h3 data-t="title_cameras">Exposed Cameras Audit</h3>
+                <p data-t="p_cameras">Discovery of poorly secured cameras for audit, awareness, and prevention purposes.</p>
                 <ul class="tag-list"><li>Audit</li><li>OSINT</li><li>Éthique</li></ul>
               </div>
             </article>
@@ -272,8 +270,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Game security</span>
-                <h3>Anticheats GMod / DarkRP</h3>
-                <p>Travail sur des anticheats dans les premières années de GMod/DarkRP, parmi les premiers projets du genre.</p>
+                <h3 data-t="title_anticheat">GMod / DarkRP Anticheats</h3>
+                <p data-t="p_anticheat">Work on anticheats in the early years of GMod/DarkRP, among the first projects of its kind.</p>
                 <ul class="tag-list"><li>GMod</li><li>DarkRP</li><li>Anticheat</li></ul>
               </div>
             </article>
@@ -290,8 +288,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Utility</span>
-                <h3>Redémarrage PC simple</h3>
-                <p>Logiciel minimaliste pour redémarrer un PC rapidement avec une interface claire et directe.</p>
+                <h3 data-t="title_restart">Simple PC Restart</h3>
+                <p data-t="p_restart">Minimalist software to restart a PC quickly with a clear and direct interface.</p>
                 <ul class="tag-list"><li>Simple</li><li>Stable</li><li>Système</li></ul>
               </div>
             </article>
@@ -308,8 +306,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Game tool</span>
-                <h3>Génération de cartes semi-3D</h3>
-                <p>Génération automatique de maps avec couches Parallax pour produire un rendu semi-3D.</p>
+                <h3 data-t="title_parallax">Semi-3D Map Generation</h3>
+                <p data-t="p_parallax">Automatic generation of maps with Parallax layers to produce a semi-3D rendering.</p>
                 <ul class="tag-list"><li>Parallax</li><li>Procedural</li><li>Maps</li></ul>
               </div>
             </article>
@@ -328,8 +326,9 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Roblox</span>
-                <h3>Jeux vidéos Roblox</h3>
-                <p>Création d'expériences complètes. <br>
+                <h3 data-t="title_rbx_games">Roblox Video Games</h3>
+                <p>
+                  <span data-t="p_rbx_creation">Creation of full experiences.</span> <br>
                   <a href="https://www.roblox.com/games/11448052802/Pet-Rift" target="_blank" style="color: var(--accent); text-decoration: underline;">Pet Rift</a> | 
                   <a href="https://www.roblox.com/games/17255321367/Rift-Slasher" target="_blank" style="color: var(--accent); text-decoration: underline;">Rift Slasher</a>
                 </p>
@@ -350,8 +349,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Legacy</span>
-                <h3 data-t="title_rbx_exploit">Roblox Exploit (Terminé)</h3>
-                <p data-t="p_rbx_exploit">Création massive de scripts (2K+) pour Roblox. Cette activité est désormais close mais a forgé une expertise solide en Lua.</p>
+                <h3 data-t="title_rbx_exploit">Roblox Exploit (Legacy)</h3>
+                <p data-t="p_rbx_exploit">Massive creation of scripts (2K+) for Roblox. This activity is now closed but forged a solid expertise in Lua.</p>
                 <ul class="tag-list"><li>Lua</li><li>Security</li><li>Legacy</li></ul>
               </div>
             </article>
@@ -379,8 +378,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Game servers</span>
-                <h3>Serveurs de jeux ultra moddés</h3>
-                <p>Création de serveurs Minecraft, GMod, FiveM et autres environnements lourdement customisés.</p>
+                <h3 data-t="title_servers">Ultra-Modded Game Servers</h3>
+                <p data-t="p_servers">Creation of Minecraft, GMod, FiveM servers, and other heavily customized environments.</p>
                 <ul class="tag-list"><li>Minecraft</li><li>GMod</li><li>FiveM</li></ul>
               </div>
             </article>
@@ -397,8 +396,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Local app</span>
-                <h3>Traducteur de sous-titres en masse</h3>
-                <p>Traduction rapide de sous-titres en plusieurs langues, full local et facile à prendre en main.</p>                <ul class="tag-list"><li>Batch</li><li>Local</li><li>Multilingue</li></ul>
+                <h3 data-t="title_subtitles">Bulk Subtitle Translator</h3>
+                <p data-t="p_subtitles">Quick translation of subtitles into multiple languages, full local and easy to use.</p>                <ul class="tag-list"><li>Batch</li><li>Local</li><li>Multilingue</li></ul>
               </div>
             </article>
 
@@ -416,8 +415,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Android tool</span>
-                <h3>Debloater Android PC</h3>
-                <p>Outil PC pour nettoyer un appareil Android, retirer les apps inutiles et simplifier la maintenance.</p>
+                <h3 data-t="title_android">PC Android Debloater</h3>
+                <p data-t="p_android">PC tool to clean an Android device, remove useless apps, and simplify maintenance.</p>
                 <ul class="tag-list"><li>Android</li><li>ADB</li><li>Debloat</li></ul>
               </div>
             </article>
@@ -436,8 +435,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Discord bot</span>
-                <h3>Bot Discord complet</h3>
-                <p>Mini-jeux, jeu complet donjon/trading/farming, moderation, logs et maintenance continue depuis 2 ans+.</p>
+                <h3 data-t="title_discord">Complete Discord Bot</h3>
+                <p data-t="p_discord">Mini-games, complete dungeon/trading/farming game, moderation, logs, and continuous maintenance for 2+ years.</p>
                 <ul class="tag-list"><li>Moderation</li><li>Game bot</li><li>Logs</li></ul>
               </div>
             </article>
@@ -456,8 +455,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Maintenance</span>
-                <h3>Mise à jour logiciels en 1 clic</h3>
-                <p>Mise à jour rapide des applications installées, avec récupération depuis les sources officielles.</p>
+                <h3 data-t="title_updater">1-Click Software Update</h3>
+                <p data-t="p_updater">Quick update of installed applications, with retrieval from official sources.</p>
                 <ul class="tag-list"><li>Updater</li><li>1 clic</li><li>Officiel</li></ul>
               </div>
             </article>
@@ -476,8 +475,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">Browser extensions</span>
-                <h3>Extensions Chrome</h3>
-                <p>Visualizer audio, prix au kilo pour comparer les commandes food, automatisations web et outils pratiques.</p>
+                <h3 data-t="title_extension">Chrome Extensions</h3>
+                <p data-t="p_extension">Audio visualizer, price per kilo to compare food orders, web automations, and practical tools.</p>
                 <ul class="tag-list"><li>Chrome</li><li>Audio</li><li>Anti-scam</li></ul>
               </div>
             </article>
@@ -501,8 +500,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type">AI workflows</span>
-                <h3>Expérimentation IA et modèles locaux</h3>
-                <p>Claude, Gemini, DeepSeek, versions CLI et dizaines de modèles locaux testés pour comparer leurs comportements et les intégrer à des outils.</p>
+                <h3 data-t="title_ai">AI Experimentation & Local Models</h3>
+                <p data-t="p_ai">Claude, Gemini, DeepSeek, CLI versions, and dozens of local models tested to compare behaviors and integrate them into tools.</p>
                 <ul class="tag-list"><li>Claude</li><li>Gemini</li><li>Codex</li><li>Local</li></ul>
               </div>
             </article>
@@ -511,55 +510,55 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
 
         <section class="section skills-section" id="competences" aria-labelledby="skills-title">
           <div class="section-copy">
-            <p class="eyebrow">Compétences</p>
-            <h2 id="skills-title">Ce que je sais faire</h2>
+            <p class="eyebrow" data-t="skills_eyebrow">Skills</p>
+            <h2 id="skills-title" data-t="skills_title">What I Know</h2>
           </div>
 
           <div class="skills-layout">
             <div class="skill-column">
-              <h3>Développement</h3>
+              <h3 data-t="skill_dev_title">Development</h3>
               <div class="skill-list">
-                <span>Applications desktop</span>
-                <span>Interfaces simples et efficaces</span>
-                <span>Logiciels créés pour mes besoins</span>
-                <span>Création d'APIs personnelles</span>
-                <span>IA, LLMs et modèles locaux</span>
-                <span>Projets en parallèle</span>
-                <span>Automatisation de workflows</span>
+                <span data-t="skill_dev_1">Desktop Applications</span>
+                <span data-t="skill_dev_2">Simple & Effective Interfaces</span>
+                <span data-t="skill_dev_3">Software created for my needs</span>
+                <span data-t="skill_dev_4">Creation of Personal APIs</span>
+                <span data-t="skill_dev_5">AI, LLMs & Local Models</span>
+                <span data-t="skill_dev_6">Parallel Projects</span>
+                <span data-t="skill_dev_7">Workflow Automation</span>
               </div>
             </div>
             <div class="skill-column">
-              <h3>Système & maintenance</h3>
+              <h3 data-t="skill_sys_title">System & Maintenance</h3>
               <div class="skill-list">
-                <span>Optimisation Windows</span>
-                <span>Diagnostic et nettoyage</span>
-                <span>Mise à jour logicielle</span>
-                <span>ADB / debloat Android</span>
-                <span>Scripts technicien</span>
+                <span data-t="skill_sys_1">Windows Optimization</span>
+                <span data-t="skill_sys_2">Diagnosis & Cleaning</span>
+                <span data-t="skill_sys_3">Software Update</span>
+                <span data-t="skill_sys_4">ADB / Android Debloating</span>
+                <span data-t="skill_sys_5">Technician Scripts</span>
               </div>
             </div>
             <div class="skill-column">
-              <h3>Gaming & communautés</h3>
+              <h3 data-t="skill_game_title">Gaming & Communities</h3>
               <div class="skill-list">
-                <span>Roblox / Lua</span>
-                <span>Lua comme langage principal</span>
-                <span>Gameplay systèmes</span>
-                <span>Serveurs Minecraft / GMod / FiveM</span>
-                <span>Anticheats GMod / DarkRP</span>
-                <span>Bots Discord</span>
-                <span>Économies farming/trading</span>
+                <span data-t="skill_game_1">Roblox / Lua</span>
+                <span data-t="skill_game_2">Lua as Primary Language</span>
+                <span data-t="skill_game_3">Gameplay Systems</span>
+                <span data-t="skill_game_4">Minecraft / GMod / FiveM Servers</span>
+                <span data-t="skill_game_5">GMod / DarkRP Anticheats</span>
+                <span data-t="skill_game_6">Discord Bots</span>
+                <span data-t="skill_game_7">Farming/Trading Economies</span>
               </div>
             </div>
             <div class="skill-column">
-              <h3>Web & extensions</h3>
+              <h3 data-t="skill_web_title">Web & Extensions</h3>
               <div class="skill-list">
-                <span>Extensions Chrome</span>
-                <span>Automatisation web</span>
-                <span>Claude / Gemini / DeepSeek CLI</span>
-                <span>Veille nouvelles technologies</span>
-                <span>Audio visualizers</span>
-                <span>Comparateurs pratiques</span>
-                <span>UX utilitaire</span>
+                <span data-t="skill_web_1">Chrome Extensions</span>
+                <span data-t="skill_web_2">Web Automation</span>
+                <span data-t="skill_web_3">Claude / Gemini / DeepSeek CLI</span>
+                <span data-t="skill_web_4">New Tech Watch</span>
+                <span data-t="skill_web_5">Audio Visualizers</span>
+                <span data-t="skill_web_6">Practical Comparators</span>
+                <span data-t="skill_web_7">Utility UX</span>
               </div>
             </div>
           </div>
@@ -567,10 +566,10 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
 
         <section class="section contact-section" id="contact" aria-labelledby="contact-title">
           <div class="contact-copy">
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Discutons d'un projet ou d'une collaboration</h2>
-            <p>
-              L'email et Discord sont disponibles. Les démos publiques peuvent être ajoutées projet par projet.
+            <p class="eyebrow" data-t="contact_eyebrow">Contact</p>
+            <h2 id="contact-title" data-t="contact_title">Let's discuss a project or collaboration</h2>
+            <p data-t="contact_desc">
+              Email and Discord are available. Public demos can be added project by project.
             </p>
           </div>
           <div class="contact-actions">
@@ -600,12 +599,12 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
     </div>
 
     <dialog class="project-dialog" data-project-dialog>
-      <button class="icon-button dialog-close" type="button" data-dialog-close aria-label="Fermer">
+      <button class="icon-button dialog-close" type="button" data-dialog-close aria-label="Close">
         <svg aria-hidden="true" viewBox="0 0 24 24">
           <path d="m6 6 12 12M18 6 6 18" />
         </svg>
       </button>
-      <span class="project-type" data-dialog-type>Projet</span>
+      <span class="project-type" data-dialog-type data-t="dialog_project">Project</span>
       <h2 data-dialog-title></h2>
       <p data-dialog-summary></p>
       <div class="dialog-tags" data-dialog-tags></div>
