@@ -53,6 +53,7 @@ searchInput?.addEventListener("input", applyFilters);
 
 const dialog = document.querySelector("[data-project-dialog]");
 const closeDialogButton = document.querySelector("[data-dialog-close]");
+const dialogVisual = document.querySelector("[data-dialog-visual]");
 const dialogTitle = document.querySelector("[data-dialog-title]");
 const dialogType = document.querySelector("[data-dialog-type]");
 const dialogSummary = document.querySelector("[data-dialog-summary]");
@@ -64,12 +65,24 @@ projectCards.forEach((card) => {
   card.setAttribute("aria-label", `See project details for ${card.dataset.title}`);
 
   const open = () => {
-    if (!dialog || !dialogTitle || !dialogType || !dialogSummary || !dialogTags) return;
+    if (!dialog || !dialogTitle || !dialogType || !dialogSummary || !dialogTags || !dialogVisual) return;
     const previousScrollX = window.scrollX;
     const previousScrollY = window.scrollY;
 
-    dialogTitle.textContent = card.dataset.title ?? "";
-    dialogSummary.textContent = card.dataset.summary ?? "";
+    // Clone visual from card
+    dialogVisual.innerHTML = "";
+    const originalVisual = card.querySelector(".project-visual");
+    if (originalVisual) {
+      const clonedVisual = originalVisual.cloneNode(true);
+      // Remove any inline style that might prevent it from filling the container
+      clonedVisual.style.width = "100%";
+      clonedVisual.style.height = "100%";
+      clonedVisual.style.minHeight = "auto";
+      dialogVisual.appendChild(clonedVisual);
+    }
+
+    dialogTitle.textContent = card.querySelector("h3").textContent ?? "";
+    dialogSummary.textContent = card.querySelector("p")?.textContent ?? card.dataset.summary ?? "";
     dialogType.textContent = card.querySelector(".project-type")?.textContent ?? "Project";
     dialogTags.innerHTML = "";
     (card.dataset.tags ?? "")
