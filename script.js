@@ -496,7 +496,7 @@ const translations = {
     p_android: "PC tool to clean an Android device, remove useless apps, and simplify maintenance.",
     title_discord: "Complete Discord Bot",
     p_discord: "Mini-games, complete dungeon/trading/farming game, moderation, logs, and continuous maintenance for 2+ years.",
-    title_updater: "1-1-Click Software Update",
+    title_updater: "1-Click Software Update",
     p_updater: "Quick update of installed applications, with retrieval from official sources.",
     title_extension: "Chrome Extensions",
     p_extension: "Audio visualizer, price per kilo to compare food orders, web automations, and practical tools.",
