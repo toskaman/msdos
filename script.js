@@ -64,12 +64,7 @@ const zoomClose = document.querySelector("[data-zoom-close]");
 const zoomContent = document.querySelector("#zoom-content");
 const zoomBtn = document.querySelector("[data-zoom-btn]");
 
-projectCards.forEach((card) => {
-  card.tabIndex = 0;
-  card.setAttribute("role", "button");
-  card.setAttribute("aria-label", `See project details for ${card.dataset.title}`);
-
-  const open = () => {
+const openDialog = (card) => {
     if (!dialog || !dialogTitle || !dialogType || !dialogSummary || !dialogTags || !dialogVisual) return;
     const previousScrollX = window.scrollX;
     const previousScrollY = window.scrollY;
@@ -85,6 +80,7 @@ projectCards.forEach((card) => {
       clonedVisual.style.display = "flex";
       clonedVisual.style.justifyContent = "center";
       clonedVisual.style.alignItems = "center";
+      clonedVisual.style.padding = "0";
       dialogVisual.appendChild(clonedVisual);
     }
 
@@ -105,40 +101,44 @@ projectCards.forEach((card) => {
     window.requestAnimationFrame(() => {
       window.scrollTo(previousScrollX, previousScrollY);
     });
-  };
+};
 
-  card.addEventListener("click", open);
+projectCards.forEach((card) => {
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.addEventListener("click", () => openDialog(card));
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      open();
+      openDialog(card);
     }
   });
 });
 
-zoomBtn?.addEventListener("click", () => {
+zoomBtn?.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
   if (!dialogVisual || !zoomDialog || !zoomContent) return;
+  
   zoomContent.innerHTML = "";
-  const mainImage = dialogVisual.querySelector("img");
-  if (mainImage) {
-    const zoomedImg = mainImage.cloneNode(true);
-    zoomedImg.style.width = "auto";
-    zoomedImg.style.height = "auto";
-    zoomedImg.style.maxWidth = "90vw";
-    zoomedImg.style.maxHeight = "90vh";
-    zoomedImg.style.objectFit = "contain";
-    zoomedImg.style.boxShadow = "0 0 50px rgba(0,0,0,0.5)";
-    zoomContent.appendChild(zoomedImg);
+  const images = dialogVisual.querySelectorAll("img");
+  if (images.length > 0) {
+    if (images.length === 1) {
+        const zoomedImg = images[0].cloneNode(true);
+        zoomedImg.style.cssText = "max-width: 90vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; box-shadow: 0 0 50px rgba(0,0,0,0.8); border: 2px solid #303842;";
+        zoomContent.appendChild(zoomedImg);
+    } else {
+        const container = document.createElement("div");
+        container.style.cssText = "display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;";
+        images.forEach(img => {
+            const zoomedImg = img.cloneNode(true);
+            zoomedImg.style.cssText = "max-width: 40vw; max-height: 70vh; width: auto; height: auto; object-fit: contain; box-shadow: 0 0 30px rgba(0,0,0,0.5); border: 1px solid #303842;";
+            container.appendChild(zoomedImg);
+        });
+        zoomContent.appendChild(container);
+    }
   } else {
-    const visualContent = dialogVisual.innerHTML;
-    zoomContent.innerHTML = visualContent;
-    const items = zoomContent.querySelectorAll("img, svg");
-    items.forEach(item => {
-      item.style.width = "auto";
-      item.style.height = "auto";
-      item.style.maxWidth = "80vw";
-      item.style.maxHeight = "80vh";
-    });
+    zoomContent.innerHTML = dialogVisual.innerHTML;
   }
   zoomDialog.showModal();
 });
@@ -178,15 +178,20 @@ let animationId;
 let isHeroVisible = true;
 
 function drawNetwork(time = 0) {
-  if (!canvas || !ctx || !isHeroVisible) return;
+  if (!canvas || !ctx) return;
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
+
+  if (!isHeroVisible) {
+    animationId = requestAnimationFrame(drawNetwork);
+    return;
+  }
 
   ctx.clearRect(0, 0, width, height);
 
   // Subtle Tech Grid
-  ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--line").trim();
-  ctx.globalAlpha = 0.06;
+  ctx.strokeStyle = "#303842";
+  ctx.globalAlpha = 0.08;
   ctx.lineWidth = 0.5;
   const gridSize = 60;
   for (let x = 0; x < width; x += gridSize) {
@@ -212,7 +217,7 @@ function drawNetwork(time = 0) {
       const distance = Math.hypot(a.x - b.x, a.y - b.y);
       if (distance < 170) {
         ctx.globalAlpha = Math.max(0, 0.18 - distance / 900);
-        ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--accent").trim();
+        ctx.strokeStyle = getComputedStyle(root).getPropertyValue("--accent").trim() || "#37c6c0";
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
@@ -224,40 +229,33 @@ function drawNetwork(time = 0) {
   points.forEach((point, index) => {
     ctx.globalAlpha = index % 5 === 0 ? 0.8 : 0.35;
     ctx.fillStyle = index % 5 === 0
-      ? getComputedStyle(root).getPropertyValue("--coral").trim()
-      : getComputedStyle(root).getPropertyValue("--accent").trim();
+      ? getComputedStyle(root).getPropertyValue("--coral").trim() || "#ff7575"
+      : getComputedStyle(root).getPropertyValue("--accent").trim() || "#37c6c0";
     ctx.beginPath();
     ctx.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
     ctx.fill();
   });
 
   ctx.globalAlpha = 1;
-  if (!prefersReducedMotion && isHeroVisible) {
+  if (!prefersReducedMotion) {
     animationId = requestAnimationFrame(drawNetwork);
   }
 }
 
-// Performance Optimization: Stop animation when not visible (2026 Eco-Design Standard)
 if (window.IntersectionObserver && canvas) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       isHeroVisible = entry.isIntersecting;
-      if (isHeroVisible && !prefersReducedMotion) {
-        requestAnimationFrame(drawNetwork);
-      } else {
-        cancelAnimationFrame(animationId);
-      }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0 });
   observer.observe(document.querySelector(".hero-section"));
 }
 
 if (canvas && ctx) {
   syncCanvasSize();
-  drawNetwork();
+  requestAnimationFrame(drawNetwork);
   window.addEventListener("resize", () => {
     syncCanvasSize();
-    drawNetwork();
   });
 }
 
@@ -265,7 +263,6 @@ if (canvas && ctx) {
 const langToggle = document.querySelector("[data-lang-toggle]");
 const langDot = document.getElementById("lang-switch-dot");
 
-// FORCE ENGLISH DEFAULT: Always start with English for new sessions
 let currentLang = localStorage.getItem("portfolio-lang") || "en";
 if (!localStorage.getItem("portfolio-lang")) {
   currentLang = "en";
