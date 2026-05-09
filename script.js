@@ -74,7 +74,6 @@ projectCards.forEach((card) => {
     const originalVisual = card.querySelector(".project-visual");
     if (originalVisual) {
       const clonedVisual = originalVisual.cloneNode(true);
-      // Remove any inline style that might prevent it from filling the container
       clonedVisual.style.width = "100%";
       clonedVisual.style.height = "100%";
       clonedVisual.style.minHeight = "auto";
@@ -197,10 +196,16 @@ if (canvas && ctx) {
 
 // Multi-language support
 const langToggle = document.querySelector("[data-lang-toggle]");
+const langDot = document.getElementById("lang-switch-dot");
 let currentLang = localStorage.getItem("portfolio-lang") || "en";
 
 const translations = {
   fr: {
+    meta_desc: "Portfolio développeur : 20 ans d'expérience informatique, Lua, logiciels Windows, Roblox, automatisation, bots Discord, API, IA, modèles locaux, serveurs de jeux et extensions Chrome.",
+    og_title: "MSDOS | Portfolio développeur",
+    og_desc: "Portfolio : 20 ans d'expérience informatique, Lua, tools Windows, automatisation, Roblox, bots Discord, API, IA, modèles locaux, serveurs de jeux et logiciels local-first.",
+    site_title: "MSDOS | Portfolio développeur",
+    brand_tagline: "Outils / Roblox / Automation",
     nav_projects: "Projets",
     nav_skills: "Compétences",
     nav_contact: "Contact",
@@ -244,6 +249,21 @@ const translations = {
     filter_game: "Jeux",
     filter_security: "Sécurité",
     filter_extension: "Extensions",
+    type_desktop: "App Desktop",
+    type_windows: "Outil Windows",
+    type_security: "Sensibilisation",
+    type_game_sec: "Sécurité Jeu",
+    type_utility: "Utilitaire",
+    type_game_tool: "Outil Jeu",
+    type_roblox: "Roblox",
+    type_legacy: "Historique",
+    type_servers: "Serveurs de jeu",
+    type_local: "App Locale",
+    type_android: "Outil Android",
+    type_discord: "Bot Discord",
+    type_maintenance: "Maintenance",
+    type_browser: "Extensions Web",
+    type_ai: "Workflows IA",
     p_rbx_manager: "Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.",
     link_discord: "Rejoindre le Discord",
     p_rbx_creation: "Création d'expériences complètes.",
@@ -271,7 +291,7 @@ const translations = {
     p_discord: "Mini-jeux, jeu complet donjon/trading/farming, modération, logs et maintenance continue depuis 2 ans+.",
     title_updater: "Mise à jour logiciels en 1 clic",
     p_updater: "Mise à jour rapide des applications installées, avec récupération depuis les sources officielles.",
-    title_extension: "Extensions Chrome",
+    title_extension: "Chrome Extensions",
     p_extension: "Visualizer audio, prix au kilo pour comparer les commandes food, automatisations web et outils pratiques.",
     title_ai: "Expérimentation IA et modèles locaux",
     p_ai: "Claude, Gemini, DeepSeek, versions CLI et dizaines de modèles locaux testés pour comparer leurs comportements et les intégrer à des outils.",
@@ -312,6 +332,11 @@ const translations = {
     dialog_project: "Projet"
   },
   en: {
+    meta_desc: "Developer Portfolio: 20 years of IT experience, Lua, Windows software, Roblox, automation, Discord bots, API, AI, local models, game servers and Chrome extensions.",
+    og_title: "MSDOS | Developer Portfolio",
+    og_desc: "Portfolio: 20 years of IT experience, Lua, Windows tools, automation, Roblox, Discord bots, API, AI, local models, game servers and local-first software.",
+    site_title: "MSDOS | Developer Portfolio",
+    brand_tagline: "Tools / Roblox / Automation",
     nav_projects: "Projects",
     nav_skills: "Skills",
     nav_contact: "Contact",
@@ -355,6 +380,21 @@ const translations = {
     filter_game: "Games",
     filter_security: "Security",
     filter_extension: "Extensions",
+    type_desktop: "Desktop app",
+    type_windows: "Windows tool",
+    type_security: "Security awareness",
+    type_game_sec: "Game security",
+    type_utility: "Utility",
+    type_game_tool: "Game tool",
+    type_roblox: "Roblox",
+    type_legacy: "Legacy",
+    type_servers: "Game servers",
+    type_local: "Local app",
+    type_android: "Android tool",
+    type_discord: "Discord bot",
+    type_maintenance: "Maintenance",
+    type_browser: "Browser extensions",
+    type_ai: "AI workflows",
     p_rbx_manager: "New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.",
     link_discord: "Join Discord",
     p_rbx_creation: "Creation of full experiences.",
@@ -438,6 +478,17 @@ function updateLanguage(lang) {
       el.placeholder = translations[lang][key];
     }
   });
+
+  document.querySelectorAll("[data-t-content]").forEach(el => {
+    const key = el.getAttribute("data-t-content");
+    if (translations[lang][key]) {
+      el.setAttribute("content", translations[lang][key]);
+    }
+  });
+
+  if (langDot) {
+    langDot.style.left = lang === "fr" ? "1.4rem" : "0.2rem";
+  }
 
   document.documentElement.lang = lang;
 }

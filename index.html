@@ -6,15 +6,17 @@
     <meta
       name="description"
       content="Developer Portfolio: 20 years of IT experience, Lua, Windows software, Roblox, automation, Discord bots, API, AI, local models, game servers and Chrome extensions."
+      data-t-content="meta_desc"
     />
     <meta name="theme-color" content="#111315" />
-    <meta property="og:title" content="MSDOS | Developer Portfolio" />
+    <meta property="og:title" content="MSDOS | Developer Portfolio" data-t-content="og_title" />
     <meta
       property="og:description"
       content="Portfolio: 20 years of IT experience, Lua, Windows tools, automation, Roblox, Discord bots, API, AI, local models, game servers and local-first software."
+      data-t-content="og_desc"
     />
     <meta property="og:type" content="website" />
-    <title>MSDOS | Developer Portfolio</title>
+    <title data-t="site_title">MSDOS | Developer Portfolio</title>
     <link rel="icon" href="assets/favicon.svg?v=2026-05-09-7" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=2026-05-09-8" />
   </head>
@@ -25,7 +27,7 @@
           <span class="brand-mark" aria-hidden="true">M</span>
           <span>
             <strong>MSDOS</strong>
-            <small>Tools / Roblox / Automation</small>
+            <small data-t="brand_tagline">Tools / Roblox / Automation</small>
           </span>
         </a>
 
@@ -36,9 +38,13 @@
         </nav>
 
         <div class="header-actions" style="display: flex; gap: 0.5rem; align-items: center;">
-          <button class="icon-button" type="button" data-lang-toggle aria-label="Switch language" style="width: auto; padding: 0 0.8rem;">
-            <span id="lang-icon">🇺🇸 / 🇫🇷</span>
-          </button>
+          <div style="display: flex; align-items: center; gap: 0.4rem; background: var(--surface); padding: 0.3rem 0.6rem; border-radius: 12px; border: 1px solid var(--line);">
+            <span style="font-size: 1.1rem; opacity: 0.8;">🇺🇸</span>
+            <button class="icon-button" type="button" data-lang-toggle aria-label="Switch language" style="width: 2.8rem; height: 1.6rem; border-radius: 20px; position: relative; padding: 0; background: var(--surface-strong); border: 1px solid var(--line);">
+              <div id="lang-switch-dot" style="width: 1.2rem; height: 1.2rem; background: var(--accent); border-radius: 50%; position: absolute; left: 0.2rem; transition: left 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);"></div>
+            </button>
+            <span style="font-size: 1.1rem; opacity: 0.8;">🇫🇷</span>
+          </div>
 
           <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle theme">
             <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -110,7 +116,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
           </aside>
         </section>
 
-        <section class="section intro-section" aria-label="Positioning">
+        <section class="section intro-section" aria-label="Positionning">
           <div class="section-copy">
             <p class="eyebrow" data-t="focus_eyebrow">What I Build</p>
             <h2 data-t="focus_title">Tools that solve real-world problems</h2>
@@ -210,7 +216,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <img src="assets/rbx3.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Roblox Manager 3">
               </div>
               <div class="project-body">
-                <span class="project-type">Desktop app</span>
+                <span class="project-type" data-t="type_desktop">Desktop app</span>
                 <h3>Roblox Account Manager V2</h3>
                 <p data-t="p_rbx_manager">New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.</p>
                 <p style="margin-top: 10px;">
@@ -233,7 +239,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <img src="assets/tech.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Technician Tool">
               </div>
               <div class="project-body">
-                <span class="project-type">Windows tool</span>
+                <span class="project-type" data-t="type_windows">Windows tool</span>
                 <h3 data-t="title_optimizer">Technician Optimization Tool</h3>
                 <p data-t="p_optimizer">Hyper-complete tool to speed up, clean, diagnose, and apply useful settings on PC.</p>
                 <ul class="tag-list"><li>Technicien</li><li>Windows</li><li>Performance</li></ul>
@@ -251,7 +257,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <span></span><span></span><span></span>
               </div>
               <div class="project-body">
-                <span class="project-type">Security awareness</span>
+                <span class="project-type" data-t="type_security">Security awareness</span>
                 <h3 data-t="title_cameras">Exposed Cameras Audit</h3>
                 <p data-t="p_cameras">Discovery of poorly secured cameras for audit, awareness, and prevention purposes.</p>
                 <ul class="tag-list"><li>Audit</li><li>OSINT</li><li>Éthique</li></ul>
@@ -269,7 +275,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <span></span><span></span><span></span>
               </div>
               <div class="project-body">
-                <span class="project-type">Game security</span>
+                <span class="project-type" data-t="type_game_sec">Game security</span>
                 <h3 data-t="title_anticheat">GMod / DarkRP Anticheats</h3>
                 <p data-t="p_anticheat">Work on anticheats in the early years of GMod/DarkRP, among the first projects of its kind.</p>
                 <ul class="tag-list"><li>GMod</li><li>DarkRP</li><li>Anticheat</li></ul>
@@ -287,7 +293,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <img src="assets/shutdown.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Shutdown">
               </div>
               <div class="project-body">
-                <span class="project-type">Utility</span>
+                <span class="project-type" data-t="type_utility">Utility</span>
                 <h3 data-t="title_restart">Simple PC Restart</h3>
                 <p data-t="p_restart">Minimalist software to restart a PC quickly with a clear and direct interface.</p>
                 <ul class="tag-list"><li>Simple</li><li>Stable</li><li>Système</li></ul>
@@ -305,7 +311,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <img src="assets/parallax.webp" style="width: 100%; height: 100%; object-fit: cover;" alt="Parallax Map Generation">
               </div>
               <div class="project-body">
-                <span class="project-type">Game tool</span>
+                <span class="project-type" data-t="type_game_tool">Game tool</span>
                 <h3 data-t="title_parallax">Semi-3D Map Generation</h3>
                 <p data-t="p_parallax">Automatic generation of maps with Parallax layers to produce a semi-3D rendering.</p>
                 <ul class="tag-list"><li>Parallax</li><li>Procedural</li><li>Maps</li></ul>
@@ -325,7 +331,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <div style="position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.7); padding: 2px 5px; border-radius: 3px; font-size: 10px; color: #fff;">Roblox Studio</div>
               </div>
               <div class="project-body">
-                <span class="project-type">Roblox</span>
+                <span class="project-type" data-t="type_roblox">Roblox</span>
                 <h3 data-t="title_rbx_games">Roblox Video Games</h3>
                 <p>
                   <span data-t="p_rbx_creation">Creation of full experiences.</span> <br>
@@ -348,7 +354,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <div style="color: var(--muted); font-size: 0.9rem; margin-top: 10px;">2K+ SCRIPTS LUA</div>
               </div>
               <div class="project-body">
-                <span class="project-type">Legacy</span>
+                <span class="project-type" data-t="type_legacy">Legacy</span>
                 <h3 data-t="title_rbx_exploit">Roblox Exploit (Legacy)</h3>
                 <p data-t="p_rbx_exploit">Massive creation of scripts (2K+) for Roblox. This activity is now closed but forged a solid expertise in Lua.</p>
                 <ul class="tag-list"><li>Lua</li><li>Security</li><li>Legacy</li></ul>
@@ -377,7 +383,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 </svg>
               </div>
               <div class="project-body">
-                <span class="project-type">Game servers</span>
+                <span class="project-type" data-t="type_servers">Game servers</span>
                 <h3 data-t="title_servers">Ultra-Modded Game Servers</h3>
                 <p data-t="p_servers">Creation of Minecraft, GMod, FiveM servers, and other heavily customized environments.</p>
                 <ul class="tag-list"><li>Minecraft</li><li>GMod</li><li>FiveM</li></ul>
@@ -395,7 +401,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <span>FR</span><span>EN</span><span>ES</span>
               </div>
               <div class="project-body">
-                <span class="project-type">Local app</span>
+                <span class="project-type" data-t="type_local">Local app</span>
                 <h3 data-t="title_subtitles">Bulk Subtitle Translator</h3>
                 <p data-t="p_subtitles">Quick translation of subtitles into multiple languages, full local and easy to use.</p>                <ul class="tag-list"><li>Batch</li><li>Local</li><li>Multilingue</li></ul>
               </div>
@@ -414,7 +420,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 </svg>
               </div>
               <div class="project-body">
-                <span class="project-type">Android tool</span>
+                <span class="project-type" data-t="type_android">Android tool</span>
                 <h3 data-t="title_android">PC Android Debloater</h3>
                 <p data-t="p_android">PC tool to clean an Android device, remove useless apps, and simplify maintenance.</p>
                 <ul class="tag-list"><li>Android</li><li>ADB</li><li>Debloat</li></ul>
@@ -434,7 +440,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 </svg>
               </div>
               <div class="project-body">
-                <span class="project-type">Discord bot</span>
+                <span class="project-type" data-t="type_discord">Discord bot</span>
                 <h3 data-t="title_discord">Complete Discord Bot</h3>
                 <p data-t="p_discord">Mini-games, complete dungeon/trading/farming game, moderation, logs, and continuous maintenance for 2+ years.</p>
                 <ul class="tag-list"><li>Moderation</li><li>Game bot</li><li>Logs</li></ul>
@@ -454,7 +460,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 </svg>
               </div>
               <div class="project-body">
-                <span class="project-type">Maintenance</span>
+                <span class="project-type" data-t="type_maintenance">Maintenance</span>
                 <h3 data-t="title_updater">1-Click Software Update</h3>
                 <p data-t="p_updater">Quick update of installed applications, with retrieval from official sources.</p>
                 <ul class="tag-list"><li>Updater</li><li>1 clic</li><li>Officiel</li></ul>
@@ -474,7 +480,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 </svg>
               </div>
               <div class="project-body">
-                <span class="project-type">Browser extensions</span>
+                <span class="project-type" data-t="type_browser">Browser extensions</span>
                 <h3 data-t="title_extension">Chrome Extensions</h3>
                 <p data-t="p_extension">Audio visualizer, price per kilo to compare food orders, web automations, and practical tools.</p>
                 <ul class="tag-list"><li>Chrome</li><li>Audio</li><li>Anti-scam</li></ul>
@@ -499,7 +505,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
                 <div style="width: 30px; height: 30px; border-radius: 50%; background: #4d66ff; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; font-family: sans-serif;">D</div>
               </div>
               <div class="project-body">
-                <span class="project-type">AI workflows</span>
+                <span class="project-type" data-t="type_ai">AI workflows</span>
                 <h3 data-t="title_ai">AI Experimentation & Local Models</h3>
                 <p data-t="p_ai">Claude, Gemini, DeepSeek, CLI versions, and dozens of local models tested to compare behaviors and integrate them into tools.</p>
                 <ul class="tag-list"><li>Claude</li><li>Gemini</li><li>Codex</li><li>Local</li></ul>
@@ -613,6 +619,6 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
       </div>
     </dialog>
 
-    <script src="script.js?v=2026-05-09-7"></script>
+    <script src="script.js?v=2026-05-09-8"></script>
   </body>
 </html>
