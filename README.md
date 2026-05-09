@@ -4,7 +4,7 @@ Site portfolio statique pour presenter des projets, competences et liens de cont
 
 URL cible : `https://toskaman.github.io/`
 
-Version actuelle : mai 2026, avec parcours informatique, APIs, serveurs de jeux et contacts publics.
+Version actuelle : mai 2026, avec parcours informatique, APIs, IA, modeles locaux, serveurs de jeux et contacts publics.
 
 ## Modifier le contenu
 

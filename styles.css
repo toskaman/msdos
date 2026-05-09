@@ -414,7 +414,7 @@ pre {
 .experience-strip {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: 1rem;
 }
 
@@ -896,6 +896,43 @@ pre {
 .visual-extension span:nth-child(4) {
   background: var(--green);
   height: 6.7rem;
+}
+
+.visual-ai {
+  align-content: center;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.visual-ai span {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 8%, transparent);
+  height: 4.2rem;
+  justify-self: center;
+  width: 4.2rem;
+}
+
+.visual-ai span:nth-child(1),
+.visual-ai span:nth-child(5) {
+  background: var(--accent);
+}
+
+.visual-ai span:nth-child(2) {
+  background: var(--violet);
+}
+
+.visual-ai span:nth-child(3) {
+  background: var(--amber);
+}
+
+.visual-ai span:nth-child(4) {
+  background: var(--coral);
+}
+
+.visual-ai span:nth-child(6) {
+  background: var(--green);
 }
 
 .project-body {
