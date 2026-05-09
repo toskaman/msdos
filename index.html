@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio developpeur : logiciels Windows, outils Roblox, automatisation, bots Discord, extensions Chrome, optimisation PC, traduction locale et jeux."
+    />
+    <meta name="theme-color" content="#f7f8fb" />
+    <title>Toskaman | Portfolio developpeur</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" data-header>
+        <a class="brand" href="#top" aria-label="Retour a l'accueil">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <span>
+            <strong>Toskaman</strong>
+            <small>Tools / Roblox / Automation</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="#projets">Projets</a>
+          <a href="#competences">Competences</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Changer le theme">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
+            <circle cx="12" cy="12" r="4.2" />
+          </svg>
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero-section" aria-labelledby="hero-title">
+          <canvas id="hero-canvas" width="1400" height="760" aria-hidden="true"></canvas>
+          <div class="hero-content">
+            <p class="eyebrow">Portfolio technique</p>
+            <h1 id="hero-title">Developpeur de logiciels, tools et experiences Roblox</h1>
+            <p class="hero-lead">
+              Je cree des outils pratiques, des automatisations et des experiences interactives avec une approche orientee
+              performance, simplicite d'utilisation et maintenance long terme.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#projets">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z" />
+                  <path d="m9 9 3 3-3 3M14 15h2" />
+                </svg>
+                Voir les projets
+              </a>
+              <a class="button secondary" href="#contact">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5z" />
+                  <path d="m6 7 6 5 6-5" />
+                </svg>
+                Me contacter
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Resume rapide">
+            <div class="terminal-window">
+              <div class="terminal-bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <pre><code>$ profile.scan()
+projects: 12+
+focus: desktop_tools, automation, roblox
+discord_bot: 2+ years online
+mode: local_first, technician_oriented</code></pre>
+            </div>
+            <div class="metric-row" aria-label="Indicateurs">
+              <div>
+                <strong>2 ans+</strong>
+                <span>Bot Discord</span>
+              </div>
+              <div>
+                <strong>Local</strong>
+                <span>Traduction</span>
+              </div>
+              <div>
+                <strong>1 clic</strong>
+                <span>Maintenance PC</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section intro-section" aria-label="Positionnement">
+          <div class="section-copy">
+            <p class="eyebrow">Ce que je construis</p>
+            <h2>Des outils qui resolvent des problemes concrets</h2>
+          </div>
+          <div class="intro-grid">
+            <article class="focus-item">
+              <span class="focus-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16M7 10h10M9 14h6M11 18h2" /></svg>
+              </span>
+              <h3>Applications desktop</h3>
+              <p>Optimisation Windows, maintenance, debloat Android, traduction locale et gestion d'outils.</p>
+            </article>
+            <article class="focus-item">
+              <span class="focus-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 7h14v10H5z" /><path d="M8 20h8M10 17v3M14 17v3" /><path d="m9 12 2 2 4-5" /></svg>
+              </span>
+              <h3>Automation & bots</h3>
+              <p>Bots Discord complets, automatisation web, moderation, logs, mini-jeux et systemes persistants.</p>
+            </article>
+            <article class="focus-item">
+              <span class="focus-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 15 12 5l8 10" /><path d="M7 15h10l-2 5H9z" /><path d="M12 5v15" /></svg>
+              </span>
+              <h3>Experiences de jeu</h3>
+              <p>Jeux Roblox, generation de cartes semi-3D, systems de farming, trading et gameplay long terme.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section projects-section" id="projets" aria-labelledby="projects-title">
+          <div class="section-copy">
+            <p class="eyebrow">Projets</p>
+            <h2 id="projects-title">Selection de realisations</h2>
+          </div>
+
+          <div class="project-controls" aria-label="Filtres des projets">
+            <label class="search-box">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m16 16 4 4" />
+              </svg>
+              <input type="search" data-project-search placeholder="Rechercher un projet ou une competence" />
+            </label>
+            <div class="filter-row" role="list" aria-label="Categories">
+              <button class="filter-button active" type="button" data-filter="all">Tout</button>
+              <button class="filter-button" type="button" data-filter="desktop">Desktop</button>
+              <button class="filter-button" type="button" data-filter="automation">Automation</button>
+              <button class="filter-button" type="button" data-filter="game">Jeux</button>
+              <button class="filter-button" type="button" data-filter="security">Securite</button>
+              <button class="filter-button" type="button" data-filter="extension">Extensions</button>
+            </div>
+          </div>
+
+          <div class="projects-grid" data-project-grid>
+            <article
+              class="project-card featured"
+              data-category="desktop automation"
+              data-title="Roblox Account Manager V2"
+              data-summary="Manager Roblox nouvelle generation avec gestion multi-comptes, automatisation et tableau de bord complet."
+              data-tags="Roblox, Desktop, Automation, UX"
+            >
+              <div class="project-visual visual-manager" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Desktop app</span>
+                <h3>Roblox Account Manager V2</h3>
+                <p>Manager Roblox nouvelle generation avec beaucoup de features, pense pour gerer rapidement plusieurs comptes et actions.</p>
+                <ul class="tag-list" aria-label="Technologies et axes">
+                  <li>Roblox</li><li>Multi-comptes</li><li>Automation</li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="desktop"
+              data-title="Tool d'optimisation technicien"
+              data-summary="Suite d'optimisation PC orientee technicien avec actions de maintenance, nettoyage, diagnostics et reglages systeme."
+              data-tags="Windows, Optimisation, Diagnostic, Maintenance"
+            >
+              <div class="project-visual visual-optimizer" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Windows tool</span>
+                <h3>Tool d'optimisation technicien</h3>
+                <p>Outil hyper complet pour accelerer, nettoyer, diagnostiquer et appliquer des reglages utiles sur PC.</p>
+                <ul class="tag-list"><li>Technicien</li><li>Windows</li><li>Performance</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="security desktop"
+              data-title="Audit de cameras exposees"
+              data-summary="Logiciel de decouverte de cameras non securisees, presente comme outil d'audit et de sensibilisation aux risques d'exposition publique."
+              data-tags="Securite, Audit, OSINT, Sensibilisation"
+            >
+              <div class="project-visual visual-security" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Security awareness</span>
+                <h3>Audit de cameras exposees</h3>
+                <p>Decouverte de cameras mal securisees a des fins d'audit, de sensibilisation et de prevention.</p>
+                <ul class="tag-list"><li>Audit</li><li>OSINT</li><li>Ethique</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="desktop"
+              data-title="Redemarrage PC simple"
+              data-summary="Application de redemarrage PC tres simple, stable et fonctionnelle pour executer rapidement une action systeme fiable."
+              data-tags="Windows, Utility, UX"
+            >
+              <div class="project-visual visual-restart" aria-hidden="true">
+                <span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Utility</span>
+                <h3>Redemarrage PC simple</h3>
+                <p>Logiciel minimaliste pour redemarrer un PC rapidement avec une interface claire et directe.</p>
+                <ul class="tag-list"><li>Simple</li><li>Stable</li><li>Systeme</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="game automation"
+              data-title="Generation de cartes semi-3D"
+              data-summary="Generation automatique de cartes de jeux avec effet Parallax et rendu semi-3D."
+              data-tags="Parallax, Generation, Game tools, Map design"
+            >
+              <div class="project-visual visual-parallax" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Game tool</span>
+                <h3>Generation de cartes semi-3D</h3>
+                <p>Generation automatique de maps avec couches Parallax pour produire un rendu semi-3D.</p>
+                <ul class="tag-list"><li>Parallax</li><li>Procedural</li><li>Maps</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="game"
+              data-title="Jeux videos Roblox"
+              data-summary="Differents jeux Roblox avec logique gameplay, interfaces, economie et boucles de progression."
+              data-tags="Roblox, Game design, Lua, UI"
+            >
+              <div class="project-visual visual-roblox" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Roblox</span>
+                <h3>Jeux videos Roblox</h3>
+                <p>Creation de plusieurs experiences Roblox avec systems de gameplay, progression et interfaces.</p>
+                <ul class="tag-list"><li>Roblox</li><li>Gameplay</li><li>Lua</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-category="desktop automation"
+              data-title="Traducteur de sous-titres en masse"
+              data-summary="Logiciel local pour traduire des sous-titres en masse dans plusieurs langues avec une prise en main rapide."
+              data-tags="Local first, Subtitle, Batch, Translation"
+            >
+              <div class="project-visual visual-subtitles" aria-hidden="true">
+                <span>FR</span><span>EN</span><span>ES</span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Local app</span>
+                <h3>Traducteur de sous-titres en masse</h3>
+                <p>Traduction rapide de sous-titres en plusieurs langues, full local et facile a prendre en main.</p>
+                <ul class="tag-list"><li>Batch</li><li>Local</li><li>Multilingue</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="desktop"
+              data-title="Debloater Android PC"
+              data-summary="Debloater Android pilote depuis PC pour retirer les applications inutiles et alleger un appareil."
+              data-tags="Android, ADB, Debloat, Desktop"
+            >
+              <div class="project-visual visual-android" aria-hidden="true">
+                <span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Android tool</span>
+                <h3>Debloater Android PC</h3>
+                <p>Outil PC pour nettoyer un appareil Android, retirer les apps inutiles et simplifier la maintenance.</p>
+                <ul class="tag-list"><li>Android</li><li>ADB</li><li>Debloat</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-category="automation game"
+              data-title="Bot Discord complet"
+              data-summary="Bot Discord maintenu depuis plus de deux ans avec mini-jeux, donjon, trading, farming, moderation complete et logs."
+              data-tags="Discord, Bot, Moderation, Game economy, Logs"
+            >
+              <div class="project-visual visual-discord" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Discord bot</span>
+                <h3>Bot Discord complet</h3>
+                <p>Mini-jeux, jeu complet donjon/trading/farming, moderation, logs et maintenance continue depuis 2 ans+.</p>
+                <ul class="tag-list"><li>Moderation</li><li>Game bot</li><li>Logs</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="desktop automation"
+              data-title="Mise a jour logiciels en 1 clic"
+              data-summary="Outil de mise a jour des logiciels installes sur PC en un clic depuis les sources officielles."
+              data-tags="Updater, Windows, Sources officielles, Automation"
+            >
+              <div class="project-visual visual-updater" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Maintenance</span>
+                <h3>Mise a jour logiciels en 1 clic</h3>
+                <p>Mise a jour rapide des applications installees, avec recuperation depuis les sources officielles.</p>
+                <ul class="tag-list"><li>Updater</li><li>1 clic</li><li>Officiel</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="extension automation"
+              data-title="Extensions Chrome"
+              data-summary="Extensions Chrome : visualizer audio sur videos, prix au kilo sur apps food, automatisations de sites et assistants web."
+              data-tags="Chrome, Extension, Audio, Automation, UX"
+            >
+              <div class="project-visual visual-extension" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="project-body">
+                <span class="project-type">Browser extensions</span>
+                <h3>Extensions Chrome</h3>
+                <p>Visualizer audio, prix au kilo pour comparer les commandes food, automatisations web et outils pratiques.</p>
+                <ul class="tag-list"><li>Chrome</li><li>Audio</li><li>Anti-scam</li></ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section skills-section" id="competences" aria-labelledby="skills-title">
+          <div class="section-copy">
+            <p class="eyebrow">Competences</p>
+            <h2 id="skills-title">Ce que je sais faire</h2>
+          </div>
+
+          <div class="skills-layout">
+            <div class="skill-column">
+              <h3>Developpement</h3>
+              <div class="skill-list">
+                <span>Applications desktop</span>
+                <span>Interfaces simples et efficaces</span>
+                <span>Automatisation de workflows</span>
+                <span>Traitement par lots</span>
+                <span>Outils local-first</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3>Systeme & maintenance</h3>
+              <div class="skill-list">
+                <span>Optimisation Windows</span>
+                <span>Diagnostic et nettoyage</span>
+                <span>Mise a jour logicielle</span>
+                <span>ADB / debloat Android</span>
+                <span>Scripts technicien</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3>Gaming & communautes</h3>
+              <div class="skill-list">
+                <span>Roblox / Lua</span>
+                <span>Gameplay systems</span>
+                <span>Bots Discord</span>
+                <span>Moderation et logs</span>
+                <span>Economies farming/trading</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3>Web & extensions</h3>
+              <div class="skill-list">
+                <span>Extensions Chrome</span>
+                <span>Automatisation web</span>
+                <span>Audio visualizers</span>
+                <span>Comparateurs pratiques</span>
+                <span>UX utilitaire</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+          <div class="contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Discutons d'un projet ou d'une collaboration</h2>
+            <p>
+              Remplace les liens ci-dessous par ton GitHub, ton Discord, ton mail ou les demos publiques de tes projets.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-link" href="https://github.com/toskaman" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.2-.4 6.5-1.6 6.5-7A5.4 5.4 0 0 0 20 3.8 5 5 0 0 0 19.9 0S18.7-.4 16 1.5a13.4 13.4 0 0 0-7 0C6.3-.4 5.1 0 5.1 0A5 5 0 0 0 5 3.8a5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.6 6.5 7a3.4 3.4 0 0 0-1 2.6V22" />
+              </svg>
+              GitHub
+            </a>
+            <a class="contact-link" href="mailto:ton.email@example.com">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5z" />
+                <path d="m6 7 6 5 6-5" />
+              </svg>
+              Email
+            </a>
+            <a class="contact-link" href="#" aria-label="Lien Discord a remplacer">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M8 17s1.5 1 4 1 4-1 4-1" />
+                <path d="M9 12h.01M15 12h.01" />
+                <path d="M7.5 8.5C9 7.8 10.5 7.5 12 7.5s3 .3 4.5 1" />
+                <path d="M5.8 19.5c-1.1-3.7-.8-7.5 1-11.5A11 11 0 0 1 10 7l.5 1.2a8.8 8.8 0 0 1 3 0L14 7a11 11 0 0 1 3.2 1c1.8 4 2.1 7.8 1 11.5-1.3.8-2.7 1.3-4.2 1.5l-.7-1.2a9 9 0 0 1-2.6 0L10 21c-1.5-.2-2.9-.7-4.2-1.5Z" />
+              </svg>
+              Discord
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="project-dialog" data-project-dialog>
+      <button class="icon-button dialog-close" type="button" data-dialog-close aria-label="Fermer">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <span class="project-type" data-dialog-type>Projet</span>
+      <h2 data-dialog-title></h2>
+      <p data-dialog-summary></p>
+      <div class="dialog-tags" data-dialog-tags></div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
