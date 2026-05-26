@@ -499,6 +499,30 @@ pre {
   max-width: 1180px;
 }
 
+.security-notice {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 42%),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 0 auto 1.25rem;
+  max-width: 1180px;
+  padding: 1rem 1.15rem;
+}
+
+.security-notice h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.25;
+  margin: 0 0 0.55rem;
+}
+
+.security-notice p:last-child {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 95ch;
+}
+
 .search-box {
   align-items: center;
   background: var(--surface);
@@ -591,6 +615,37 @@ pre {
   overflow: hidden;
   padding: 1.1rem;
   position: relative;
+}
+
+.visual-image-pair {
+  background: #080808;
+  gap: 0.55rem;
+  padding: 0.75rem;
+}
+
+.visual-image-pair img {
+  border-radius: 4px;
+  height: 100%;
+  object-fit: contain;
+  width: calc(50% - 0.3rem);
+}
+
+.visual-slider-workspace {
+  background: #090b0d;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 0.55rem;
+}
+
+.visual-slider-workspace img {
+  background: #050607;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  width: 100%;
 }
 
 .project-visual::before,

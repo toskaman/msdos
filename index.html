@@ -35,6 +35,7 @@
           { "@type": "SoftwareApplication", "name": "Roblox Account Manager V2", "applicationCategory": "Utilities" },
           { "@type": "SoftwareApplication", "name": "Technician Optimization Tool", "applicationCategory": "Utilities" },
           { "@type": "SoftwareApplication", "name": "Gemini 3.5 Security Bypass", "applicationCategory": "SecurityApplication" },
+          { "@type": "SoftwareApplication", "name": "Sliderman: Gemini & Custom Windows Modules", "applicationCategory": "Utilities" },
           { "@type": "SoftwareApplication", "name": "Complete Discord Bot", "applicationCategory": "Automation" }
         ]
       }
@@ -42,7 +43,7 @@
     </script>
 
     <link rel="icon" href="assets/favicon.svg?v=2026-05-09-7" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=2026-05-11-23" />
+    <link rel="stylesheet" href="styles.css?v=2026-05-26-2" />
   </head>
   <body>
     <div class="page-shell">
@@ -208,6 +209,14 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             <h2 id="projects-title" data-t="projects_title">Selection of Work</h2>
           </div>
 
+          <div class="security-notice" aria-labelledby="security-notice-title">
+            <p class="eyebrow" data-t="security_notice_eyebrow">Security & Ethics</p>
+            <h3 id="security-notice-title" data-t="security_notice_title">Authorized research only</h3>
+            <p data-t="security_notice_body">
+              My security-related tools and research are designed and used only in authorized contexts: learning, research, challenges, audits, or tests on my own environments or with explicit permission. I do not use them to access, maintain access to, bypass, alter, exfiltrate, or disrupt systems or data without authorization; sensitive findings are handled responsibly and in line with applicable French and international law.
+            </p>
+          </div>
+
           <div class="project-controls" aria-label="Project filters">
             <label class="search-box">
               <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -278,14 +287,36 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               data-summary="Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details."
               data-tags="Security, AI, Gemini, DRM, Research"
             >
-              <div class="project-visual visual-gemini-bypass" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; background: #080808; padding: 12px;">
-                <img src="assets/drm.png" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;" alt="Gemini 3.5 Security Bypass DRM research">
+              <div class="project-visual visual-gemini-bypass visual-image-pair" aria-hidden="true">
+                <img src="assets/drm.png" alt="Gemini 3.5 Security Bypass DRM research">
+                <img src="assets/drm2.png" alt="Gemini 3.5 Security Bypass DRM research second view">
               </div>
               <div class="project-body">
                 <span class="project-type" data-t="type_security">Security awareness</span>
                 <h3 data-t="title_gemini_bypass">Gemini 3.5 Security Bypass</h3>
                 <p data-t="p_gemini_bypass">Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details.</p>
                 <ul class="tag-list"><li>Security</li><li>AI</li><li>Gemini</li><li>DRM</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-category="desktop automation ai"
+              data-title="Sliderman: Gemini & Custom Windows Modules"
+              data-summary="Modular Windows workspace integrating Gemini, Google Discover on PC, and custom modules that can be added in seconds and positioned freely."
+              data-tags="Windows, Gemini, Google Discover, Modules, Automation"
+            >
+              <div class="project-visual visual-slider-workspace" aria-hidden="true">
+                <img src="assets/slider1.png" alt="Sliderman module workspace overview">
+                <img src="assets/slider2.png" alt="Sliderman Google Discover integration">
+                <img src="assets/slider3.png" alt="Sliderman custom modules">
+                <img src="assets/slider4.png" alt="Sliderman module placement">
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_workspace">Windows workspace</span>
+                <h3 data-t="title_sliderman">Sliderman: Gemini & Custom Windows Modules</h3>
+                <p data-t="p_sliderman">Modular Windows workspace integrating Gemini, Google Discover on PC, and custom modules that can be added in seconds and positioned freely.</p>
+                <ul class="tag-list"><li>Gemini</li><li>Google Discover</li><li>Modules</li><li>Windows</li></ul>
               </div>
             </article>
 
@@ -717,6 +748,6 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
       </svg>
     </button>
 
-    <script src="script.js?v=2026-05-26-1"></script>
+    <script src="script.js?v=2026-05-26-2"></script>
   </body>
 </html>

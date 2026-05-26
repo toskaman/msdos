@@ -2,12 +2,13 @@ const root = document.documentElement;
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const storedTheme = localStorage.getItem("portfolio-theme");
 const themeMeta = document.querySelector('meta[name="theme-color"]');
+const initialTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "dark";
 
 function syncThemeMeta() {
   themeMeta?.setAttribute("content", root.dataset.theme === "light" ? "#f7f8fb" : "#111315");
 }
 
-root.dataset.theme = storedTheme || "dark";
+root.dataset.theme = initialTheme;
 syncThemeMeta();
 
 themeToggle?.addEventListener("click", () => {
@@ -312,6 +313,9 @@ const translations = {
     exp_learning_desc: "Base principale en Lua, exploration d'autres langages, veille permanente sur les nouvelles technologies et travail en parallèle sur plusieurs projets.",
     projects_eyebrow: "Projets",
     projects_title: "Sélection de réalisations",
+    security_notice_eyebrow: "Sécurité & Éthique",
+    security_notice_title: "Recherche autorisée uniquement",
+    security_notice_body: "Mes logiciels et recherches liés à la sécurité sont conçus et utilisés uniquement dans un cadre autorisé : apprentissage, recherche, challenge, audit ou tests sur mes propres environnements ou avec accord explicite. Je ne les utilise pas pour accéder, maintenir un accès, contourner, altérer, exfiltrer ou perturber des systèmes ou données sans droit ; toute découverte sensible est traitée de manière responsable et conforme aux lois françaises et internationales applicables.",
     search_placeholder: "Rechercher un projet ou une compétence",
     filter_all: "Tout",
     filter_desktop: "Desktop",
@@ -334,6 +338,7 @@ const translations = {
     type_maintenance: "Maintenance",
     type_browser: "Extensions Web",
     type_ai: "Workflows IA",
+    type_workspace: "Workspace Windows",
     p_rbx_manager: "Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.",
     link_discord: "Rejoindre le Discord",
     p_rbx_creation: "Création d'expériences complètes.",
@@ -341,6 +346,8 @@ const translations = {
     p_bypass: "Démonstration technique d'un contournement des sécurités de ChatGPT 5.5 en Mai 2026. Analyse de vulnérabilité et rapport éthique.",
     title_gemini_bypass: "Gemini 3.5 Security Bypass",
     p_gemini_bypass: "Cas de recherche sécurité autour de Gemini 3.5, documenté comme test de robustesse et analyse responsable sans détails d'implémentation publics.",
+    title_sliderman: "Sliderman : Gemini et modules custom pour Windows",
+    p_sliderman: "Workspace Windows modulaire intégrant Gemini, Google Discover sur PC et des modules personnalisés ajoutables en quelques secondes, déplaçables librement.",
     title_optimizer: "Tool d'optimisation technicien",
     p_optimizer: "Outil hyper complet pour accélérer, nettoyer, diagnostiquer et appliquer des réglages utiles sur PC.",
     title_cameras: "Audit de caméras exposées",
@@ -451,6 +458,9 @@ const translations = {
     exp_learning_desc: "Primary base in Lua, exploration of other languages, permanent watch on new technologies, and parallel work on multiple projects.",
     projects_eyebrow: "Projects",
     projects_title: "Selection of Work",
+    security_notice_eyebrow: "Security & Ethics",
+    security_notice_title: "Authorized research only",
+    security_notice_body: "My security-related tools and research are designed and used only in authorized contexts: learning, research, challenges, audits, or tests on my own environments or with explicit permission. I do not use them to access, maintain access to, bypass, alter, exfiltrate, or disrupt systems or data without authorization; sensitive findings are handled responsibly and in line with applicable French and international law.",
     search_placeholder: "Search for a project or skill",
     filter_all: "All",
     filter_desktop: "Desktop",
@@ -473,6 +483,7 @@ const translations = {
     type_maintenance: "Maintenance",
     type_browser: "Browser extensions",
     type_ai: "AI workflows",
+    type_workspace: "Windows workspace",
     p_rbx_manager: "New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.",
     link_discord: "Join Discord",
     p_rbx_creation: "Creation of full experiences.",
@@ -480,6 +491,8 @@ const translations = {
     p_bypass: "Technical demonstration of bypassing ChatGPT 5.5 security measures in May 2026. Includes vulnerability analysis and ethical reporting.",
     title_gemini_bypass: "Gemini 3.5 Security Bypass",
     p_gemini_bypass: "Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details.",
+    title_sliderman: "Sliderman: Gemini & Custom Windows Modules",
+    p_sliderman: "Modular Windows workspace integrating Gemini, Google Discover on PC, and custom modules that can be added in seconds and positioned freely.",
     title_optimizer: "Technician Optimization Tool",
     p_optimizer: "Hyper-complete tool to speed up, clean, diagnose, and apply useful settings on PC.",
     title_cameras: "Exposed Cameras Audit",
