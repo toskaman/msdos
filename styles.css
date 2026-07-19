@@ -547,39 +547,55 @@ pre {
 
 .filter-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  justify-content: flex-end;
+  flex-wrap: nowrap;
+  background: color-mix(in srgb, var(--surface-strong) 40%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 0.3rem;
+  gap: 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  backdrop-filter: blur(8px);
+}
+
+.filter-row::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-button {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
   color: var(--muted);
   cursor: pointer;
-  font-size: 0.86rem;
-  font-weight: 800;
-  min-height: 2.45rem;
-  padding: 0 0.9rem;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s ease;
+  font-size: 0.88rem;
+  font-weight: 700;
+  min-height: 2.2rem;
+  padding: 0 1.25rem;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-button:hover {
-  transform: scale(1.1);
+  color: var(--ink);
 }
 
-.filter-button.active,
-.filter-button:hover {
-  background: var(--ink);
-  border-color: var(--ink);
+.filter-button.active {
+  background: var(--accent);
   color: var(--bg);
+  font-weight: 800;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .projects-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
 }
 
 .project-card {
@@ -892,6 +908,28 @@ pre {
 
 .visual-subtitles span:nth-child(3) {
   margin-left: 6rem;
+}
+
+.visual-keyboardlocker {
+  background: radial-gradient(circle, #1a1b24 0%, #0c0d12 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.visual-keyboardlocker img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.6)) drop-shadow(0 0 12px rgba(55, 198, 192, 0.25));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .visual-keyboardlocker img {
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .visual-android {
