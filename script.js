@@ -107,9 +107,13 @@ const openDialog = (card) => {
 projectCards.forEach((card) => {
   card.tabIndex = 0;
   card.setAttribute("role", "button");
-  card.addEventListener("click", () => openDialog(card));
+  card.addEventListener("click", (event) => {
+    if (event.target.closest("a")) return;
+    openDialog(card);
+  });
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
+      if (event.target.closest("a")) return;
       event.preventDefault();
       openDialog(card);
     }
@@ -341,6 +345,7 @@ const translations = {
     type_workspace: "Workspace Windows",
     p_rbx_manager: "Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.",
     link_discord: "Rejoindre le Discord",
+    link_rbx_manager: "Voir sur GitHub",
     p_rbx_creation: "Création d'expériences complètes.",
     title_highpriority: "HighPriority Booster",
     p_highpriority: "Permet de lancer n'importe quelle application en mode Haute Priorité CPU automatiquement sans changer l'application ou ses réglages.",
@@ -490,6 +495,7 @@ const translations = {
     type_workspace: "Windows workspace",
     p_rbx_manager: "New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.",
     link_discord: "Join Discord",
+    link_rbx_manager: "View on GitHub",
     p_rbx_creation: "Creation of full experiences.",
     title_highpriority: "HighPriority Booster",
     p_highpriority: "Allows you to launch any application in High CPU Priority mode automatically without changing the application or its settings.",
