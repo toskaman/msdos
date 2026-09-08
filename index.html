@@ -233,10 +233,126 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               <button class="filter-button" type="button" data-filter="game" data-t="filter_game">Games</button>
               <button class="filter-button" type="button" data-filter="security" data-t="filter_security">Security</button>
               <button class="filter-button" type="button" data-filter="extension" data-t="filter_extension">Extensions</button>
+              <button class="filter-button" type="button" data-filter="research" data-t="filter_research">Research</button>
             </div>
           </div>
 
           <div class="projects-grid" data-project-grid>
+
+            <!-- ─── Research &amp; Engineering ─── -->
+            <div class="section-group">
+              <div class="section-group-header">
+                <span class="section-group-icon" aria-hidden="true">🔬</span>
+                <span class="section-group-label" data-t="group_research">Research &amp; Engineering</span>
+              </div>
+            </div>
+
+            <article
+              class="project-card featured"
+              data-category="research desktop"
+              data-title="Orpane Compressor"
+              data-summary="Codec de compression lossless expérimental qui surpasse 7-Zip -mx9 sur 100% des fichiers de benchmark (53/53). Vérification bit-exact SHA-256 + BLAKE3."
+              data-tags="Compression, Lossless, Research, Rust, Python, Codec"
+            >
+              <div class="project-visual visual-orpane" aria-hidden="true">
+                <div class="orpane-stat-row">
+                  <span class="orpane-label">Orpane vs 7-Zip 26.02 -mx9</span>
+                  <span class="orpane-badge">100% WIN</span>
+                </div>
+                <div class="orpane-bar-wrap">
+                  <div class="orpane-bar-label">Corpus Silesia · 211 MB</div>
+                  <div class="orpane-bars">
+                    <div class="orpane-bar orpane-bar--orpane">Orpane &nbsp; 46.5 MB</div>
+                    <div class="orpane-bar orpane-bar--7z">7-Zip &nbsp;&nbsp;&nbsp; 48.4 MB</div>
+                  </div>
+                </div>
+                <div class="orpane-badge-row">
+                  <span>53 / 53 files</span>
+                  <span>+2.4 MB saved</span>
+                  <span>4.56 : 1</span>
+                  <span>~1.8 MB/s</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_codec">Compression research</span>
+                <h3 data-t="title_orpane">Orpane Compressor</h3>
+                <p data-t="p_orpane">Experimental lossless compression codec that beats 7-Zip -mx9 on 100% of benchmarks (53/53, +2.4 MB saved). Bit-exact SHA-256 + BLAKE3 verification. Native Rust standalone decompressor published.</p>
+                <p style="margin-top: 10px;">
+                  <a href="https://github.com/toskaman/orpane-proof-package" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold;" data-t="link_orpane">View Proof Package</a>
+                </p>
+                <ul class="tag-list"><li>Python</li><li>Rust</li><li>Compression</li><li>Research</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-category="research security desktop"
+              data-title="Android Firmware — LineageOS 18.1"
+              data-summary="Firmware Android custom complet pour clone fake Samsung S25 Ultra (MT6739) : audit de 46 backdoors et trojans, remplacement par LineageOS 18.1 propre, microG, Magisk root, flasher 1-clic."
+              data-tags="Android, LineageOS, Firmware, Security, MediaTek, Custom ROM, Reverse Engineering"
+            >
+              <div class="project-visual visual-firmware" aria-hidden="true">
+                <img src="assets/firmware_home.png" alt="LineageOS 18.1 Home Screen">
+                <img src="assets/firmware_about.png" alt="LineageOS 18.1 About Phone">
+                <img src="assets/firmware_microg.png" alt="microG Services">
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_firmware">Custom Firmware</span>
+                <h3 data-t="title_firmware">Android Firmware — LineageOS 18.1</h3>
+                <p data-t="p_firmware">Custom Android firmware for fake Samsung S25 Ultra clone (MT6739): audited 46 backdoors &amp; trojans, replaced with clean LineageOS 18.1, microG, Magisk root, 1-click automated flasher.</p>
+                <p style="margin-top: 10px;">
+                  <a href="https://xdaforums.com/t/firmware-dump-root-alps-mt6739-fake-s25-ultra-clone-full_m39ka_4m_s1_q_l1_s25ultra_197-100-verified-full-stock-rom-sp-flash-tool-magisk.4800780/" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: bold;" data-t="link_firmware">View XDA Thread</a>
+                </p>
+                <ul class="tag-list"><li>Android</li><li>LineageOS</li><li>Security</li><li>MT6739</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-category="security research"
+              data-title="ChatGPT 5.5 Security Bypass"
+              data-summary="Démonstration technique d'un contournement des sécurités de ChatGPT 5.5 (Mai 2026). Report éthique et analyse de vulnérabilité."
+              data-tags="Security, AI, Pentest, ChatGPT"
+            >
+              <div class="project-visual visual-chatgpt-bypass" aria-hidden="true" style="display: flex; gap: 5px; padding: 5px; background: #0a0a0a; justify-content: center; align-items: center;">
+                <img src="assets/bug.png" style="width: 48%; height: 100%; object-fit: contain; border-radius: 4px;" alt="ChatGPT 5.5 Bypass 1">
+                <img src="assets/bypass.png" style="width: 48%; height: 100%; object-fit: contain; border-radius: 4px;" alt="ChatGPT 5.5 Bypass 2">
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_security">Security awareness</span>
+                <h3 data-t="title_bypass">ChatGPT 5.5 Security Bypass</h3>
+                <p data-t="p_bypass">Technical demonstration of bypassing ChatGPT 5.5 security measures in May 2026. Includes vulnerability analysis and ethical reporting.</p>
+                <ul class="tag-list"><li>Security</li><li>AI</li><li>ChatGPT</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-category="security research automation"
+              data-title="Gemini 3.5 Security Bypass"
+              data-summary="Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details."
+              data-tags="Security, AI, Gemini, DRM, Research"
+            >
+              <div class="project-visual visual-gemini-bypass visual-image-pair" aria-hidden="true">
+                <img src="assets/drm.png" alt="Gemini 3.5 Security Bypass DRM research">
+                <img src="assets/drm2.png" alt="Gemini 3.5 Security Bypass DRM research second view">
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_security">Security awareness</span>
+                <h3 data-t="title_gemini_bypass">Gemini 3.5 Security Bypass</h3>
+                <p data-t="p_gemini_bypass">Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details.</p>
+                <ul class="tag-list"><li>Security</li><li>AI</li><li>Gemini</li><li>DRM</li></ul>
+              </div>
+            </article>
+
+            <!-- ─── Windows Tools &amp; Desktop ─── -->
+            <div class="section-group">
+              <div class="section-group-header">
+                <span class="section-group-icon" aria-hidden="true">🛠️</span>
+                <span class="section-group-label" data-t="group_desktop">Windows Tools &amp; Desktop</span>
+              </div>
+            </div>
+
             <article
               class="project-card featured"
               data-category="desktop automation"
@@ -282,48 +398,11 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
             </article>
 
-            <article
-              class="project-card featured"
-              data-category="security"
-              data-title="ChatGPT 5.5 Security Bypass"
-              data-summary="Démonstration technique d'un contournement des sécurités de ChatGPT 5.5 (Mai 2026). Report éthique et analyse de vulnérabilité."
-              data-tags="Security, AI, Pentest, ChatGPT"
-            >
-              <div class="project-visual visual-chatgpt-bypass" aria-hidden="true" style="display: flex; gap: 5px; padding: 5px; background: #0a0a0a; justify-content: center; align-items: center;">
-                <img src="assets/bug.png" style="width: 48%; height: 100%; object-fit: contain; border-radius: 4px;" alt="ChatGPT 5.5 Bypass 1">
-                <img src="assets/bypass.png" style="width: 48%; height: 100%; object-fit: contain; border-radius: 4px;" alt="ChatGPT 5.5 Bypass 2">
-              </div>
-              <div class="project-body">
-                <span class="project-type" data-t="type_security">Security awareness</span>
-                <h3 data-t="title_bypass">ChatGPT 5.5 Security Bypass</h3>
-                <p data-t="p_bypass">Technical demonstration of bypassing ChatGPT 5.5 security measures in May 2026. Includes vulnerability analysis and ethical reporting.</p>
-                <ul class="tag-list"><li>Security</li><li>AI</li><li>ChatGPT</li></ul>
-              </div>
-            </article>
-
-            <article
-              class="project-card featured"
-              data-category="security automation"
-              data-title="Gemini 3.5 Security Bypass"
-              data-summary="Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details."
-              data-tags="Security, AI, Gemini, DRM, Research"
-            >
-              <div class="project-visual visual-gemini-bypass visual-image-pair" aria-hidden="true">
-                <img src="assets/drm.png" alt="Gemini 3.5 Security Bypass DRM research">
-                <img src="assets/drm2.png" alt="Gemini 3.5 Security Bypass DRM research second view">
-              </div>
-              <div class="project-body">
-                <span class="project-type" data-t="type_security">Security awareness</span>
-                <h3 data-t="title_gemini_bypass">Gemini 3.5 Security Bypass</h3>
-                <p data-t="p_gemini_bypass">Security research case around Gemini 3.5, documented as robustness testing and responsible analysis without public implementation details.</p>
-                <ul class="tag-list"><li>Security</li><li>AI</li><li>Gemini</li><li>DRM</li></ul>
-              </div>
-            </article>
 
             <article
               class="project-card featured"
               data-category="desktop automation ai"
-              data-title="Sliderman: Gemini & Custom Windows Modules"
+              data-title="Sliderman: Gemini &amp; Custom Windows Modules"
               data-summary="Modular Windows workspace integrating Gemini, Google Discover on PC, and custom modules that can be added in seconds and positioned freely."
               data-tags="Windows, Gemini, Google Discover, Modules, Automation"
             >
@@ -335,14 +414,14 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type" data-t="type_workspace">Windows workspace</span>
-                <h3 data-t="title_sliderman">Sliderman: Gemini & Custom Windows Modules</h3>
+                <h3 data-t="title_sliderman">Sliderman: Gemini &amp; Custom Windows Modules</h3>
                 <p data-t="p_sliderman">Modular Windows workspace integrating Gemini, Google Discover on PC, and custom modules that can be added in seconds and positioned freely.</p>
                 <ul class="tag-list"><li>Gemini</li><li>Google Discover</li><li>Modules</li><li>Windows</li></ul>
               </div>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="desktop security"
               data-title="KeyboardLocker"
               data-summary="Logiciel très léger et portable (sans installation) pour bloquer les entrées clavier et souris, avec un raccourci clavier personnalisable."
@@ -362,7 +441,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="desktop"
               data-title="Tool d'optimisation technicien"
               data-summary="Suite d'optimisation PC orientée technicien avec actions de maintenance, nettoyage, diagnostics et réglages système."
@@ -380,7 +459,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="security desktop"
               data-title="Audit de caméras exposées"
               data-summary="Logiciel de découverte de caméras non sécurisées, présenté comme outil d'audit et de sensibilisation aux risques d'exposition publique."
@@ -398,25 +477,25 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
-              data-category="security game automation"
-              data-title="Anticheats GMod / DarkRP"
-              data-summary="Travail sur des anticheats durant les premières années de GMod/DarkRP, avec une approche détection, logs et protection serveur."
-              data-tags="GMod, DarkRP, Anticheat, Lua, Sécurité"
+              class="project-card mini"
+              data-category="desktop automation"
+              data-title="Mise à jour logiciels en 1 clic"
+              data-summary="Outil de mise à jour des logiciels installés sur PC en un clic depuis les sources officielles."
+              data-tags="Updater, Windows, Sources officielles, Automation"
             >
-              <div class="project-visual visual-anticheat" aria-hidden="true">
-                <span></span><span></span><span></span>
+              <div class="project-visual visual-updater" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; background: #111;">
+                <img src="assets/toolDL.png" style="width: 100%; height: 100%; object-fit: cover;" alt="1-Click Software Update">
               </div>
               <div class="project-body">
-                <span class="project-type" data-t="type_game_sec">Game security</span>
-                <h3 data-t="title_anticheat">GMod / DarkRP Anticheats</h3>
-                <p data-t="p_anticheat">Work on anticheats in the early years of GMod/DarkRP, among the first projects of its kind.</p>
-                <ul class="tag-list"><li>GMod</li><li>DarkRP</li><li>Anticheat</li></ul>
+                <span class="project-type" data-t="type_maintenance">Maintenance</span>
+                <h3 data-t="title_updater">1-Click Software Update</h3>
+                <p data-t="p_updater">Quick update of installed applications, with retrieval from official sources.</p>
+                <ul class="tag-list"><li>Updater</li><li>1 clic</li><li>Officiel</li></ul>
               </div>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="desktop"
               data-title="Redémarrage PC simple"
               data-summary="Application de redémarrage PC très simple, stable et fonctionnelle pour exécuter rapidement une action système fiable."
@@ -434,10 +513,57 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
+              data-category="desktop automation"
+              data-title="Traducteur de sous-titres en masse"
+              data-summary="Logiciel local pour traduire des sous-titres en masse dans plusieurs langues avec une prise en main rapide."
+              data-tags="Local first, Subtitle, Batch, Translation"
+            >
+              <div class="project-visual visual-subtitles" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; background: #1a1a1a;">
+                <img src="assets/bulk.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Bulk Subtitle Translator">
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_local">Local app</span>
+                <h3 data-t="title_subtitles">Bulk Subtitle Translator</h3>
+                <p data-t="p_subtitles">Quick translation of subtitles into multiple languages, full local and easy to use.</p>
+                <ul class="tag-list"><li>Batch</li><li>Local</li><li>Multilingue</li></ul>
+              </div>
+            </article>
+
+            <article
+              class="project-card mini"
+              data-category="desktop"
+              data-title="Debloater Android PC"
+              data-summary="Debloater Android piloté depuis PC pour retirer les applications inutiles et alléger un appareil."
+              data-tags="Android, ADB, Debloat, Desktop"
+            >
+              <div class="project-visual visual-android" aria-hidden="true" style="display: flex; gap: 5px; padding: 5px; background: #111;">
+                <img src="assets/adb1.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Android Debloater 1">
+                <img src="assets/adb2.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Android Debloater 2">
+                <img src="assets/adb3.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Android Debloater 3">
+              </div>
+              <div class="project-body">
+                <span class="project-type" data-t="type_android">Android tool</span>
+                <h3 data-t="title_android">PC Android Debloater</h3>
+                <p data-t="p_android">PC tool to clean an Android device, remove useless apps, and simplify maintenance.</p>
+                <ul class="tag-list"><li>Android</li><li>ADB</li><li>Debloat</li></ul>
+              </div>
+            </article>
+
+            <!-- ─── Games &amp; Automation ─── -->
+            <div class="section-group">
+              <div class="section-group-header">
+                <span class="section-group-icon" aria-hidden="true">🎮</span>
+                <span class="section-group-label" data-t="group_games">Games &amp; Automation</span>
+              </div>
+            </div>
+
+            <article
+              class="project-card mini"
               data-category="game automation"
               data-title="Génération de cartes semi-3D"
               data-summary="Génération automatique de cartes de jeux avec effet Parallax et rendu semi-3D."
+
               data-tags="Parallax, Génération, Game tools, Map design"
             >
               <div class="project-visual visual-parallax" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; background: #0a0a0a; padding: 0;">
@@ -452,7 +578,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="game"
               data-title="Jeux vidéos Roblox"
               data-summary="Différents jeux Roblox avec logique gameplay, interfaces, économie et boucles de progression. Développeur et contributeur."
@@ -476,7 +602,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="security game"
               data-title="Roblox Exploit (Historique)"
               data-summary="Plus de 2000+ scripts créés pour l'environnement Roblox Exploit. Une étape majeure terminée aujourd'hui."
@@ -495,7 +621,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="game automation"
               data-title="Serveurs de jeux ultra moddés"
               data-summary="Création de serveurs de jeux très moddés : Minecraft, GMod, FiveM et autres environnements customisés."
@@ -524,44 +650,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card featured"
-              data-category="desktop automation"
-              data-title="Traducteur de sous-titres en masse"
-              data-summary="Logiciel local pour traduire des sous-titres en masse dans plusieurs langues avec une prise en main rapide."
-              data-tags="Local first, Subtitle, Batch, Translation"
-            >
-              <div class="project-visual visual-subtitles" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; background: #1a1a1a;">
-                <img src="assets/bulk.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Bulk Subtitle Translator">
-              </div>
-              <div class="project-body">
-                <span class="project-type" data-t="type_local">Local app</span>
-                <h3 data-t="title_subtitles">Bulk Subtitle Translator</h3>
-                <p data-t="p_subtitles">Quick translation of subtitles into multiple languages, full local and easy to use.</p>                <ul class="tag-list"><li>Batch</li><li>Local</li><li>Multilingue</li></ul>
-              </div>
-            </article>
-
-            <article
-              class="project-card"
-              data-category="desktop"
-              data-title="Debloater Android PC"
-              data-summary="Debloater Android piloté depuis PC pour retirer les applications inutiles et alléger un appareil."
-              data-tags="Android, ADB, Debloat, Desktop"
-            >
-              <div class="project-visual visual-android" aria-hidden="true" style="display: flex; gap: 5px; padding: 5px; background: #111;">
-                <img src="assets/adb1.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Android Debloater 1">
-                <img src="assets/adb2.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Android Debloater 2">
-                <img src="assets/adb3.png" style="width: 32%; height: 100%; object-fit: cover; border-radius: 4px;" alt="Android Debloater 3">
-              </div>
-              <div class="project-body">
-                <span class="project-type" data-t="type_android">Android tool</span>
-                <h3 data-t="title_android">PC Android Debloater</h3>
-                <p data-t="p_android">PC tool to clean an Android device, remove useless apps, and simplify maintenance.</p>
-                <ul class="tag-list"><li>Android</li><li>ADB</li><li>Debloat</li></ul>
-              </div>
-            </article>
-
-            <article
-              class="project-card featured"
+              class="project-card mini"
               data-category="automation game"
               data-title="Bot Discord complet"
               data-summary="Bot Discord maintenu depuis plus de deux ans avec mini-jeux, donjon, trading, farming, modération complète et logs."
@@ -581,25 +670,25 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
-              data-category="desktop automation"
-              data-title="Mise à jour logiciels en 1 clic"
-              data-summary="Outil de mise à jour des logiciels installés sur PC en un clic depuis les sources officielles."
-              data-tags="Updater, Windows, Sources officielles, Automation"
+              class="project-card mini"
+              data-category="security game automation"
+              data-title="Anticheats GMod / DarkRP"
+              data-summary="Travail sur des anticheats durant les premières années de GMod/DarkRP, avec une approche détection, logs et protection serveur."
+              data-tags="GMod, DarkRP, Anticheat, Lua, Sécurité"
             >
-              <div class="project-visual visual-updater" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; background: #111;">
-                <img src="assets/toolDL.png" style="width: 100%; height: 100%; object-fit: cover;" alt="1-Click Software Update">
+              <div class="project-visual visual-anticheat" aria-hidden="true">
+                <span></span><span></span><span></span>
               </div>
               <div class="project-body">
-                <span class="project-type" data-t="type_maintenance">Maintenance</span>
-                <h3 data-t="title_updater">1-Click Software Update</h3>
-                <p data-t="p_updater">Quick update of installed applications, with retrieval from official sources.</p>
-                <ul class="tag-list"><li>Updater</li><li>1 clic</li><li>Officiel</li></ul>
+                <span class="project-type" data-t="type_game_sec">Game security</span>
+                <h3 data-t="title_anticheat">GMod / DarkRP Anticheats</h3>
+                <p data-t="p_anticheat">Work on anticheats in the early years of GMod/DarkRP, among the first projects of its kind.</p>
+                <ul class="tag-list"><li>GMod</li><li>DarkRP</li><li>Anticheat</li></ul>
               </div>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="extension automation"
               data-title="Extensions Chrome"
               data-summary="Extensions Chrome : visualizer audio sur vidéos, prix au kilo sur apps food, automatisations de sites et assistants web."
@@ -619,7 +708,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="extension desktop"
               data-title="YT Downloader"
               data-summary="Extension et application pour télécharger des vidéos YouTube avec de multiples options et formats."
@@ -637,7 +726,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
             </article>
 
             <article
-              class="project-card"
+              class="project-card mini"
               data-category="automation desktop"
               data-title="Expérimentation IA et modèles locaux"
               data-summary="Travail avec différentes IA comme Claude, Gemini, DeepSeek, leurs versions CLI et de nombreux modèles locaux pour tester, comparer et intégrer des workflows."
@@ -655,7 +744,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</code></pre>
               </div>
               <div class="project-body">
                 <span class="project-type" data-t="type_ai">AI workflows</span>
-                <h3 data-t="title_ai">AI Experimentation & Local Models</h3>
+                <h3 data-t="title_ai">AI Experimentation &amp; Local Models</h3>
                 <p data-t="p_ai">Claude, Gemini, DeepSeek, CLI versions, and dozens of local models tested to compare behaviors and integrate them into tools.</p>
                 <ul class="tag-list"><li>Claude</li><li>Gemini</li><li>Codex</li><li>Local</li></ul>
               </div>

@@ -21,6 +21,7 @@ themeToggle?.addEventListener("click", () => {
 const searchInput = document.querySelector("[data-project-search]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projectCards = [...document.querySelectorAll(".project-card")];
+const sectionGroups = [...document.querySelectorAll(".section-group")];
 let activeFilter = "all";
 
 function normalize(value) {
@@ -39,6 +40,19 @@ function applyFilters() {
     const matchesFilter = activeFilter === "all" || category.includes(activeFilter);
     const matchesSearch = !query || haystack.includes(query);
     card.classList.toggle("is-hidden", !(matchesFilter && matchesSearch));
+  });
+
+  sectionGroups.forEach((group) => {
+    let hasVisibleCard = false;
+    let nextEl = group.nextElementSibling;
+    while (nextEl && !nextEl.classList.contains("section-group")) {
+      if (nextEl.classList.contains("project-card") && !nextEl.classList.contains("is-hidden")) {
+        hasVisibleCard = true;
+        break;
+      }
+      nextEl = nextEl.nextElementSibling;
+    }
+    group.classList.toggle("is-hidden", !hasVisibleCard);
   });
 }
 
@@ -78,9 +92,11 @@ const openDialog = (card) => {
       clonedVisual.style.width = "100%";
       clonedVisual.style.height = "100%";
       clonedVisual.style.minHeight = "20rem";
-      clonedVisual.style.display = "flex";
-      clonedVisual.style.justifyContent = "center";
-      clonedVisual.style.alignItems = "center";
+      if (!clonedVisual.classList.contains("visual-firmware") && !clonedVisual.classList.contains("visual-orpane")) {
+        clonedVisual.style.display = "flex";
+        clonedVisual.style.justifyContent = "center";
+        clonedVisual.style.alignItems = "center";
+      }
       clonedVisual.style.padding = "0";
       dialogVisual.appendChild(clonedVisual);
     }
@@ -327,6 +343,12 @@ const translations = {
     filter_game: "Jeux",
     filter_security: "Sécurité",
     filter_extension: "Extensions",
+    filter_research: "Recherche",
+    group_research: "Recherche &amp; Ingénierie",
+    group_desktop: "Outils Windows &amp; Desktop",
+    group_games: "Jeux &amp; Automation",
+    type_codec: "Recherche compression",
+    type_firmware: "Firmware Custom",
     type_desktop: "App Desktop",
     type_windows: "Outil Windows",
     type_security: "Sensibilisation",
@@ -343,6 +365,12 @@ const translations = {
     type_browser: "Extensions Web",
     type_ai: "Workflows IA",
     type_workspace: "Workspace Windows",
+    title_orpane: "Orpane Compressor",
+    p_orpane: "Codec de compression lossless expérimental qui surpasse 7-Zip -mx9 sur 100% des fichiers de benchmark (53/53, +2,4 Mo économisés). Vérification bit-exact SHA-256 + BLAKE3. Décompresseur natif Rust publié.",
+    link_orpane: "Voir le Proof Package",
+    title_firmware: "Firmware Android — LineageOS 18.1",
+    p_firmware: "Firmware Android custom pour clone fake Samsung S25 Ultra (MT6739) : 46 backdoors et trojans audités, remplacés par un LineageOS 18.1 propre avec microG, Magisk root et flasher automatique 1-clic.",
+    link_firmware: "Voir le Thread XDA",
     p_rbx_manager: "Manager Roblox nouvelle génération avec beaucoup de features, pensé pour gérer rapidement plusieurs comptes et actions.",
     link_discord: "Rejoindre le Discord",
     link_rbx_manager: "Voir sur GitHub",
@@ -477,6 +505,12 @@ const translations = {
     filter_game: "Games",
     filter_security: "Security",
     filter_extension: "Extensions",
+    filter_research: "Research",
+    group_research: "Research &amp; Engineering",
+    group_desktop: "Windows Tools &amp; Desktop",
+    group_games: "Games &amp; Automation",
+    type_codec: "Compression research",
+    type_firmware: "Custom Firmware",
     type_desktop: "Desktop app",
     type_windows: "Windows tool",
     type_security: "Security awareness",
@@ -493,6 +527,12 @@ const translations = {
     type_browser: "Browser extensions",
     type_ai: "AI workflows",
     type_workspace: "Windows workspace",
+    title_orpane: "Orpane Compressor",
+    p_orpane: "Experimental lossless compression codec that beats 7-Zip -mx9 on 100% of benchmarks (53/53, +2.4 MB saved). Bit-exact SHA-256 + BLAKE3 verification. Native Rust standalone decompressor published.",
+    link_orpane: "View Proof Package",
+    title_firmware: "Android Firmware — LineageOS 18.1",
+    p_firmware: "Custom Android firmware for fake Samsung S25 Ultra clone (MT6739): audited 46 backdoors &amp; trojans, replaced with clean LineageOS 18.1, microG, Magisk root, 1-click automated flasher.",
+    link_firmware: "View XDA Thread",
     p_rbx_manager: "New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.",
     link_discord: "Join Discord",
     link_rbx_manager: "View on GitHub",

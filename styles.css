@@ -611,13 +611,64 @@ pre {
   grid-column: span 2;
 }
 
+.project-card.mini {
+  min-height: 18rem;
+}
+
+.project-card.mini .project-visual {
+  min-height: 7rem;
+}
+
+/* Section group separator inside the projects grid */
+.section-group {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.section-group:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.section-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.section-group-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.section-group-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-group::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
 .project-card:hover {
   border-color: color-mix(in srgb, var(--accent) 80%, var(--line));
   box-shadow: var(--shadow);
   transform: translateY(-3px);
 }
 
-.project-card.is-hidden {
+.project-card.is-hidden,
+.section-group.is-hidden {
   display: none;
 }
 
@@ -930,6 +981,115 @@ pre {
 
 .project-card:hover .visual-keyboardlocker img {
   transform: scale(1.08) rotate(-4deg);
+}
+
+/* Firmware card — 3-screenshot grid */
+.visual-firmware {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
+  background: #0a0a0a;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+
+.visual-firmware img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Orpane compressor — terminal-style stats card */
+.visual-orpane {
+  background: #020406;
+  font-family: "Consolas", "Courier New", monospace;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.orpane-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orpane-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.orpane-badge {
+  background: var(--green);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.orpane-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.orpane-bar-label {
+  color: var(--muted);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.orpane-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.orpane-bar {
+  height: 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.orpane-bar--orpane {
+  background: var(--accent);
+  color: var(--bg);
+  width: 88%;
+}
+
+.orpane-bar--7z {
+  background: color-mix(in srgb, var(--muted) 18%, transparent);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  width: 92%;
+}
+
+.orpane-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.orpane-badge-row span {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--accent-strong);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
 }
 
 .visual-android {
